@@ -148,12 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
+
 				18479E2F1D66422900694CD1 /* Sticker.swift in Sources */,
 				18479E271D66371200694CD1 /* AllAlbums.swift in Sources */,
-=======
+
 				F6EF6FCA1D66AE3000AA8DC3 /* AlbumCollectionViewController.swift in Sources */,
->>>>>>> 70ee10c3b32db6997bc9a04faba11bf8fea0f9d6
 				18FDA6101D663028000A3E9B /* Rio2016.xcdatamodeld in Sources */,
 				18479E291D66373000694CD1 /* Album.swift in Sources */,
 			);
