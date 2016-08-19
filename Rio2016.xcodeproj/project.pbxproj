@@ -11,10 +11,10 @@
 		18479E291D66373000694CD1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E281D66373000694CD1 /* Album.swift */; };
 		18479E2F1D66422900694CD1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E2E1D66422900694CD1 /* Sticker.swift */; };
 		1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867FA861D52EB3700A16CBC /* AppDelegate.swift */; };
-		1867FA8C1D52EB3700A16CBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8A1D52EB3700A16CBC /* Main.storyboard */; };
 		1867FA8E1D52EB3700A16CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8D1D52EB3700A16CBC /* Assets.xcassets */; };
 		1867FA911D52EB3700A16CBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */; };
 		18FDA6101D663028000A3E9B /* Rio2016.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18FDA60E1D663028000A3E9B /* Rio2016.xcdatamodeld */; };
+		D0FAAA6B1D674F6E004FAD31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FAAA691D674F6E004FAD31 /* Main.storyboard */; };
 		F6EF6FCA1D66AE3000AA8DC3 /* AlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6FC91D66AE3000AA8DC3 /* AlbumCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,11 +24,11 @@
 		18479E2E1D66422900694CD1 /* Sticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 		1867FA831D52EB3700A16CBC /* Rio2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rio2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1867FA861D52EB3700A16CBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1867FA8B1D52EB3700A16CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1867FA8D1D52EB3700A16CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1867FA901D52EB3700A16CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1867FA921D52EB3700A16CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18FDA60F1D663028000A3E9B /* Rio2016.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rio2016.xcdatamodel; sourceTree = "<group>"; };
+		D0FAAA6A1D674F6E004FAD31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Rio2016/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6EF6FC91D66AE3000AA8DC3 /* AlbumCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,9 +62,9 @@
 		1867FA851D52EB3700A16CBC /* Rio2016 */ = {
 			isa = PBXGroup;
 			children = (
+				D0FAAA691D674F6E004FAD31 /* Main.storyboard */,
 				1867FA861D52EB3700A16CBC /* AppDelegate.swift */,
 				18FDA60E1D663028000A3E9B /* Rio2016.xcdatamodeld */,
-				1867FA8A1D52EB3700A16CBC /* Main.storyboard */,
 				18479E2E1D66422900694CD1 /* Sticker.swift */,
 				18479E261D66371200694CD1 /* AllAlbums.swift */,
 				18479E281D66373000694CD1 /* Album.swift */,
@@ -134,9 +134,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FAAA6B1D674F6E004FAD31 /* Main.storyboard in Resources */,
 				1867FA911D52EB3700A16CBC /* LaunchScreen.storyboard in Resources */,
 				1867FA8E1D52EB3700A16CBC /* Assets.xcassets in Resources */,
-				1867FA8C1D52EB3700A16CBC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,10 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */,
-
 				18479E2F1D66422900694CD1 /* Sticker.swift in Sources */,
 				18479E271D66371200694CD1 /* AllAlbums.swift in Sources */,
-
 				F6EF6FCA1D66AE3000AA8DC3 /* AlbumCollectionViewController.swift in Sources */,
 				18FDA6101D663028000A3E9B /* Rio2016.xcdatamodeld in Sources */,
 				18479E291D66373000694CD1 /* Album.swift in Sources */,
@@ -161,20 +159,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1867FA8A1D52EB3700A16CBC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1867FA8B1D52EB3700A16CBC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1867FA901D52EB3700A16CBC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D0FAAA691D674F6E004FAD31 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0FAAA6A1D674F6E004FAD31 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
