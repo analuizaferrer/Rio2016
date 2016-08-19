@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18479E271D66371200694CD1 /* AllAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E261D66371200694CD1 /* AllAlbums.swift */; };
 		18479E291D66373000694CD1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E281D66373000694CD1 /* Album.swift */; };
 		18479E2F1D66422900694CD1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E2E1D66422900694CD1 /* Sticker.swift */; };
 		1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867FA861D52EB3700A16CBC /* AppDelegate.swift */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18479E261D66371200694CD1 /* AllAlbums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAlbums.swift; sourceTree = "<group>"; };
 		18479E281D66373000694CD1 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		18479E2E1D66422900694CD1 /* Sticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 		1867FA831D52EB3700A16CBC /* Rio2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rio2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +64,6 @@
 				1867FA861D52EB3700A16CBC /* AppDelegate.swift */,
 				18FDA60E1D663028000A3E9B /* Rio2016.xcdatamodeld */,
 				18479E2E1D66422900694CD1 /* Sticker.swift */,
-				18479E261D66371200694CD1 /* AllAlbums.swift */,
 				18479E281D66373000694CD1 /* Album.swift */,
 				1867FA8D1D52EB3700A16CBC /* Assets.xcassets */,
 				1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */,
@@ -149,7 +146,6 @@
 			files = (
 				1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */,
 				18479E2F1D66422900694CD1 /* Sticker.swift in Sources */,
-				18479E271D66371200694CD1 /* AllAlbums.swift in Sources */,
 				F6EF6FCA1D66AE3000AA8DC3 /* AlbumCollectionViewController.swift in Sources */,
 				18FDA6101D663028000A3E9B /* Rio2016.xcdatamodeld in Sources */,
 				18479E291D66373000694CD1 /* Album.swift in Sources */,
