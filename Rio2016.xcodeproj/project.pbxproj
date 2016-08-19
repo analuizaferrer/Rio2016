@@ -13,6 +13,7 @@
 		1867FA8E1D52EB3700A16CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8D1D52EB3700A16CBC /* Assets.xcassets */; };
 		1867FA911D52EB3700A16CBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */; };
 		18FDA6101D663028000A3E9B /* Rio2016.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18FDA60E1D663028000A3E9B /* Rio2016.xcdatamodeld */; };
+		F6EF6FCA1D66AE3000AA8DC3 /* AlbumCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF6FC91D66AE3000AA8DC3 /* AlbumCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1867FA901D52EB3700A16CBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1867FA921D52EB3700A16CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18FDA60F1D663028000A3E9B /* Rio2016.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rio2016.xcdatamodel; sourceTree = "<group>"; };
+		F6EF6FC91D66AE3000AA8DC3 /* AlbumCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				1867FA8D1D52EB3700A16CBC /* Assets.xcassets */,
 				1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */,
 				1867FA921D52EB3700A16CBC /* Info.plist */,
+				F6EF6FC91D66AE3000AA8DC3 /* AlbumCollectionViewController.swift */,
 			);
 			path = Rio2016;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				1867FA891D52EB3700A16CBC /* ViewController.swift in Sources */,
 				1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */,
+				F6EF6FCA1D66AE3000AA8DC3 /* AlbumCollectionViewController.swift in Sources */,
 				18FDA6101D663028000A3E9B /* Rio2016.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
