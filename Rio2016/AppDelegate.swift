@@ -13,12 +13,58 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let christRedeemer = Sticker(name: "Christ Redeemer", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
+    let sugarLoaf = Sticker(name: "Sugar Loaf", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
+    let copacabanaBeach = Sticker(name: "Copacabana Beach", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
+    
+    var stickerList: [Sticker] = []
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let hasLaunchedKey = "HasLaunched"
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasLaunched = defaults.boolForKey(hasLaunchedKey)
+        
+        if !hasLaunched {
+            
+            //Executed only on first run
+            
+            defaults.setBool(true, forKey: hasLaunchedKey)
+            
+            stickerList += [christRedeemer, sugarLoaf, copacabanaBeach]
+            
+            for sticker in stickerList {
+                saveRioStickersInCoreData(sticker.name!)
+            }
+            
+        }
+        
         return true
     }
+    
+    func saveRioStickersInCoreData(name: String) {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let stickerEntity =  NSEntityDescription.entityForName("Sticker", inManagedObjectContext: managedContext)
+        let newName = NSManagedObject(entity: stickerEntity!, insertIntoManagedObjectContext: managedContext)
+        
+        newName.setValue(name, forKey: "name")
+        
+        do {
+            try managedContext.save()
+        }
+            
+        catch let error as NSError  {
+            
+            print("Could not save \(error), \(error.userInfo)")
+            
+        }
+    }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

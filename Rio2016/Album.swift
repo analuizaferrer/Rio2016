@@ -7,19 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
 class Album: UITableViewController {
     
-    let christRedeemer = Sticker(name: "Christ Redeemer", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
-    let sugarLoaf = Sticker(name: "Sugar Loaf", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
-    let copacabanaBeach = Sticker(name: "Copacabana Beach", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
-    
-    var stickers: [Sticker] = []
+    var stickersList = [NSManagedObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stickers += [christRedeemer,sugarLoaf,copacabanaBeach]
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,19 +31,47 @@ class Album: UITableViewController {
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "stickerCell")
         
-        var nameLabel = UILabel(frame: CGRectMake(18,0,320,50))
+        let nameLabel = UILabel(frame: CGRectMake(18,0,320,50))
         cell.contentView.addSubview(nameLabel)
         
-        let thisSticker = stickers[indexPath.row]
+        let thisSticker = stickersList[indexPath.row]
         
-        nameLabel.text = thisSticker.name
+        nameLabel.text = thisSticker.valueForKey("name") as? String
         
         return cell
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return stickers.count
+        return stickersList.count
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchStickers()
+    }
+    
+    func fetchStickers() {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequestSticker = NSFetchRequest(entityName: "Sticker")
+        
+        do {
+            
+            let resultsSticker = try managedContext.executeFetchRequest(fetchRequestSticker)
+            stickersList = resultsSticker as! [NSManagedObject]
+            
+        }
+            
+        catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        self.tableView.reloadData()
+    }
+
 
 }
