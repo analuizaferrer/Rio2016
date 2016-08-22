@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18479E291D66373000694CD1 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E281D66373000694CD1 /* Album.swift */; };
 		18479E2F1D66422900694CD1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E2E1D66422900694CD1 /* Sticker.swift */; };
+		18479E311D6A789F00694CD1 /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E301D6A789F00694CD1 /* StickerViewController.swift */; };
 		1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867FA861D52EB3700A16CBC /* AppDelegate.swift */; };
 		1867FA8E1D52EB3700A16CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8D1D52EB3700A16CBC /* Assets.xcassets */; };
 		1867FA911D52EB3700A16CBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */; };
@@ -18,8 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18479E281D66373000694CD1 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		18479E2E1D66422900694CD1 /* Sticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
+		18479E301D6A789F00694CD1 /* StickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
 		1867FA831D52EB3700A16CBC /* Rio2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rio2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1867FA861D52EB3700A16CBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1867FA8D1D52EB3700A16CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,6 +41,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18479E321D6A78C200694CD1 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				1867FA921D52EB3700A16CBC /* Info.plist */,
+				1867FA861D52EB3700A16CBC /* AppDelegate.swift */,
+				1867FA8D1D52EB3700A16CBC /* Assets.xcassets */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		18479E331D6A78F800694CD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18479E2E1D66422900694CD1 /* Sticker.swift */,
+				18FDA60E1D663028000A3E9B /* Rio2016.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		18479E341D6A793700694CD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0FAAA691D674F6E004FAD31 /* Main.storyboard */,
+				1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		18479E351D6A796E00694CD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6EF6FC91D66AE3000AA8DC3 /* AlbumCollectionViewController.swift */,
+				18479E301D6A789F00694CD1 /* StickerViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		1867FA7A1D52EB3700A16CBC = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +97,10 @@
 		1867FA851D52EB3700A16CBC /* Rio2016 */ = {
 			isa = PBXGroup;
 			children = (
-				D0FAAA691D674F6E004FAD31 /* Main.storyboard */,
-				1867FA861D52EB3700A16CBC /* AppDelegate.swift */,
-				18FDA60E1D663028000A3E9B /* Rio2016.xcdatamodeld */,
-				18479E2E1D66422900694CD1 /* Sticker.swift */,
-				18479E281D66373000694CD1 /* Album.swift */,
-				1867FA8D1D52EB3700A16CBC /* Assets.xcassets */,
-				1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */,
-				1867FA921D52EB3700A16CBC /* Info.plist */,
-				F6EF6FC91D66AE3000AA8DC3 /* AlbumCollectionViewController.swift */,
+				18479E321D6A78C200694CD1 /* Supporting files */,
+				18479E331D6A78F800694CD1 /* Model */,
+				18479E341D6A793700694CD1 /* View */,
+				18479E351D6A796E00694CD1 /* Controller */,
 			);
 			path = Rio2016;
 			sourceTree = "<group>";
@@ -144,11 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18479E311D6A789F00694CD1 /* StickerViewController.swift in Sources */,
 				1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */,
 				18479E2F1D66422900694CD1 /* Sticker.swift in Sources */,
 				F6EF6FCA1D66AE3000AA8DC3 /* AlbumCollectionViewController.swift in Sources */,
 				18FDA6101D663028000A3E9B /* Rio2016.xcdatamodeld in Sources */,
-				18479E291D66373000694CD1 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

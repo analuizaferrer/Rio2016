@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Before you continue, Rio 2016 wants access to your location.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Before you continue, Rio 2016 wants access to your location.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

@@ -30,6 +30,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         
         fetchStickers()
+        
     }
     
     func fetchStickers() {
@@ -45,7 +46,7 @@ class AlbumCollectionViewController: UICollectionViewController {
             stickersList = resultsSticker as! [NSManagedObject]
             
         }
-            
+        
         catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
@@ -59,6 +60,7 @@ class AlbumCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stickerCell", forIndexPath: indexPath)
       
         let nameLabel = UILabel(frame: CGRectMake(18,0,320,50))
@@ -66,7 +68,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         let thisSticker = stickersList[indexPath.row]
        
-         nameLabel.text = thisSticker.valueForKey("name") as? String
+        nameLabel.text = thisSticker.valueForKey("name") as? String
         
         return cell
     }
