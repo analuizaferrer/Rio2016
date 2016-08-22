@@ -53,7 +53,7 @@ class AlbumCollectionViewController: UICollectionViewController {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
-        self.collectionView!.reloadData()
+        //self.collectionView!.reloadData()
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
