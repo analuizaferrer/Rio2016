@@ -9,17 +9,25 @@
 import UIKit
 import Foundation
 import CoreLocation
+import CoreData
 
 class StickerViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
     var location = CLLocation()
+    
+    var stickerManagedObject: NSManagedObject!
+    
+    let nameLabel = UILabel(frame: CGRectMake(20,100,320,50))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       updateLocation()
+        updateLocation()
         
+        nameLabel.text = stickerManagedObject.valueForKey("name") as? String
+        self.view.addSubview(nameLabel)
+
     }
 
     override func didReceiveMemoryWarning() {

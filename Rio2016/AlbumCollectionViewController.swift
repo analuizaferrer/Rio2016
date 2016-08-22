@@ -15,6 +15,8 @@ class AlbumCollectionViewController: UICollectionViewController {
 
     var stickersList = [NSManagedObject]()
     
+    var cellIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,7 +77,20 @@ class AlbumCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        cellIndex = indexPath.row
         performSegueWithIdentifier("place", sender: self)
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "place" {
+           
+            var nextVC =  segue.destinationViewController as! StickerViewController
+            
+            nextVC.stickerManagedObject = stickersList[cellIndex]
+
+        }
         
     }
 }

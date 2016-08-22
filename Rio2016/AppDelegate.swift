@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let christRedeemer = Sticker(name: "Christ Redeemer", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
+    let christRedeemer = Sticker(name: "Christ Redeemer", description: "", latitude: "22.9519", longitude: "43.2105", cover: "", photo: "", date: "")
     let sugarLoaf = Sticker(name: "Sugar Loaf", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
     let copacabanaBeach = Sticker(name: "Copacabana Beach", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
     
