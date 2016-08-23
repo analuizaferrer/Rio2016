@@ -35,8 +35,8 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
     var getStickerButton = UIButton(frame: CGRectMake(100,500,320,50))
     
     //PictureView labels and buttons
-    let photoLibraryButton = UIButton(frame: CGRectMake(20,900,320,50))
-    let cameraButton = UIButton(frame: CGRectMake(100,900,320,50))
+    let photoLibraryButton = UIButton(frame: CGRectMake(0,600,320,50))
+    let cameraButton = UIButton(frame: CGRectMake(100,600,320,50))
     var pictureImageView = UIImageView(frame: CGRectMake(0, 0, 320, 320))
     
     var photo: UIImage?
@@ -62,11 +62,13 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         
         photoLibraryButton.setTitle("Photo library", forState: UIControlState.Normal)
         photoLibraryButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        photoLibraryButton.titleLabel?.textAlignment = NSTextAlignment.Left
         photoLibraryButton.addTarget(self, action: #selector(StickerViewController.photoLIbraryButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         pictureView.addSubview(photoLibraryButton)
         
         cameraButton.setTitle("Camera", forState: UIControlState.Normal)
         cameraButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        cameraButton.titleLabel?.textAlignment = NSTextAlignment.Right
         cameraButton.addTarget(self, action: #selector(StickerViewController.cameraButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         pictureView.addSubview(cameraButton)
         
@@ -165,6 +167,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
             guard let image = UIImage(data: imageData) else { return }
             
             self.pictureImageView.image = image
+            self.pictureView.addSubview(self.pictureImageView)
         }
     }
 
