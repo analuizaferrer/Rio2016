@@ -10,25 +10,73 @@ import UIKit
 import Foundation
 import CoreLocation
 import CoreData
+import AVFoundation
 
-class StickerViewController: UIViewController, CLLocationManagerDelegate {
+class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate {
     
+    var pictureView: UIView!
+    
+    //CoreLocation
     var locationManager = CLLocationManager()
     var location = CLLocation()
     
+    //AVFoundation
+    var session: AVCaptureSession!
+    var input: AVCaptureDeviceInput!
+    var output: AVCaptureStillImageOutput!
+    var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    //CoreData
     var stickerManagedObject: NSManagedObject!
     
+    //View labels and buttons
     let nameLabel = UILabel(frame: CGRectMake(20,100,320,50))
-    let locationLabel = UILabel(frame: CGRectMake(20, 200, 320, 50))
+    let locationLabel = UILabel(frame: CGRectMake(20,200,320,50))
+    var getStickerButton = UIButton(frame: CGRectMake(100,500,320,50))
+    
+    //PictureView labels and buttons
+    let photoLibraryButton = UIButton(frame: CGRectMake(20,900,320,50))
+    let cameraButton = UIButton(frame: CGRectMake(100,900,320,50))
+    var pictureImageView = UIImageView(frame: CGRectMake(0, 0, 320, 320))
+    
+    var photo: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateLocation()
         
+    //View labels and buttons
+        
         nameLabel.text = stickerManagedObject.valueForKey("name") as? String
         self.view.addSubview(nameLabel)
-
+        
+        getStickerButton.setTitle("Get sticker!", forState: UIControlState.Normal)
+        getStickerButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        getStickerButton.addTarget(self, action: #selector(StickerViewController.pictureCaptureView), forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(getStickerButton)
+        
+        
+    //PictureView labels and buttons
+        pictureView = UIView(frame: CGRectMake(0, 0, view.frame.width, view.frame.height))
+        pictureView.backgroundColor = UIColor.cyanColor()
+        
+        photoLibraryButton.setTitle("Photo library", forState: UIControlState.Normal)
+        photoLibraryButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        photoLibraryButton.addTarget(self, action: #selector(StickerViewController.photoLIbraryButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+        pictureView.addSubview(photoLibraryButton)
+        
+        cameraButton.setTitle("Camera", forState: UIControlState.Normal)
+        cameraButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        cameraButton.addTarget(self, action: #selector(StickerViewController.cameraButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+        pictureView.addSubview(cameraButton)
+        
+        pictureImageView.addSubview(pictureView)
+        
+    //AVFoundation
+        
+        setupSession()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,7 +139,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
         if location.distanceFromLocation(stickerLocation) < 500 {
             
-            locationLabel.text = "You're here! Get sticker."
+            locationLabel.text = "You're here!"
 
         }
         
@@ -105,5 +153,84 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    func cameraButtonAction () {
+       
+        guard let connection = output.connectionWithMediaType(AVMediaTypeVideo) else { return }
+        connection.videoOrientation = .Portrait
+        
+        output.captureStillImageAsynchronouslyFromConnection(connection) { (sampleBuffer, error) in
+            guard sampleBuffer != nil && error == nil else { return }
+            
+            let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+            guard let image = UIImage(data: imageData) else { return }
+            
+            self.pictureImageView.image = image
+        }
+    }
+
+    func photoLIbraryButtonAction() {
+        let picker = UIImagePickerController()
+//        picker.delegate = self
+        picker.sourceType = .PhotoLibrary
+        presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        photo = info[UIImagePickerControllerOriginalImage] as? UIImage; dismissViewControllerAnimated(true, completion: nil)
+        self.pictureImageView.image = photo
+    }
+    
+    func setupSession() {
+       
+        session = AVCaptureSession()
+        session.sessionPreset = AVCaptureSessionPresetPhoto
+        
+        let camera = AVCaptureDevice
+            .defaultDeviceWithMediaType(AVMediaTypeVideo)
+        
+        do { input = try AVCaptureDeviceInput(device: camera) } catch { return }
+        
+        output = AVCaptureStillImageOutput()
+        output.outputSettings = [ AVVideoCodecKey: AVVideoCodecJPEG ]
+        
+        guard session.canAddInput(input)
+            && session.canAddOutput(output) else { return }
+        
+        session.addInput(input)
+        session.addOutput(output)
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: session)
+        
+        previewLayer!.videoGravity = AVLayerVideoGravityResizeAspect
+        previewLayer!.connection?.videoOrientation = .Portrait
+        
+        pictureView.layer.addSublayer(previewLayer!)
+        
+        session.startRunning()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        previewLayer?.frame = CGRectMake(0, 64, view.frame.width, 455)
+    }
+    
+    func presentActivityVCForImage(image: UIImage) {
+        self.presentViewController(
+            UIActivityViewController(activityItems: [image], applicationActivities: nil),
+            animated: true,
+            completion: nil
+        )
+    }
+    
+    func pictureCaptureView () {
+        
+        self.view.addSubview(pictureView)
+        
+    }
 
 }
