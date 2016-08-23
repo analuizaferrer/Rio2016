@@ -187,15 +187,6 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         
     }
     
-    func encodeBase64 (image: UIImage) {
-        
-        let imageData: NSData = UIImagePNGRepresentation(image)!
-        
-        let strBase64: String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
-        
-        
-    }
-    
     func setupSession() {
        
         session = AVCaptureSession()
