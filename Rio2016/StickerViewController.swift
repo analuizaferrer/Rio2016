@@ -19,6 +19,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     var stickerManagedObject: NSManagedObject!
     
     let nameLabel = UILabel(frame: CGRectMake(20,100,320,50))
+    let locationLabel = UILabel(frame: CGRectMake(20, 200, 320, 50))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,30 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
         location = locations.last!
         locationManager.stopUpdatingLocation()
+        
+        compareLocation()
+    }
+    
+    func compareLocation () {
+        
+        let stickerLat = stickerManagedObject.valueForKey("latitude") as! Double
+        let stickerLong = stickerManagedObject.valueForKey("longitude") as! Double
+        let stickerLocation = CLLocation(latitude: stickerLat, longitude: stickerLong)
+        
+        if location.distanceFromLocation(stickerLocation) < 500 {
+            
+            locationLabel.text = "You're here! Get sticker."
+
+        }
+        
+        else {
+            
+            locationLabel.text = "Visit \(stickerManagedObject.valueForKey("name") as! String) to get this sticker!"
+            
+        }
+        
+        self.view.addSubview(locationLabel)
+        
     }
     
 

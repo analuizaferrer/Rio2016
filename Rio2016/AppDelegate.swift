@@ -14,9 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let christRedeemer = Sticker(name: "Christ Redeemer", description: "", latitude: "22.9519", longitude: "43.2105", cover: "", photo: "", date: "")
-    let sugarLoaf = Sticker(name: "Sugar Loaf", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
-    let copacabanaBeach = Sticker(name: "Copacabana Beach", description: "", latitude: "", longitude: "", cover: "", photo: "", date: "")
+    let christTheRedeemer = Sticker(name: "Christ the Redeemer", description: "", latitude: -22.9519, longitude: -43.2105, cover: "", photo: "", date: "")
+    let sugarLoaf = Sticker(name: "Sugar Loaf", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let copacabanaBeach = Sticker(name: "Copacabana Beach", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let pucRio = Sticker(name: "PUC-Rio", description: "", latitude: -22.9793, longitude: -43.2331, cover: "", photo: "", date: "")
     
     var stickerList: [Sticker] = []
 
@@ -33,10 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             defaults.setBool(true, forKey: hasLaunchedKey)
             
-            stickerList += [christRedeemer, sugarLoaf, copacabanaBeach]
+            stickerList += [christTheRedeemer, sugarLoaf, copacabanaBeach, pucRio]
             
             for sticker in stickerList {
-                saveRioStickersInCoreData(sticker.name!)
+                saveRioStickersInCoreData(sticker.name!, latitude: sticker.latitude!, longitude: sticker.longitude)
             }
             
         }
@@ -44,15 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func saveRioStickersInCoreData(name: String) {
+    func saveRioStickersInCoreData(name: String, latitude: Double, longitude: Double) {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
         let stickerEntity =  NSEntityDescription.entityForName("Sticker", inManagedObjectContext: managedContext)
-        let newName = NSManagedObject(entity: stickerEntity!, insertIntoManagedObjectContext: managedContext)
+        let newSticker = NSManagedObject(entity: stickerEntity!, insertIntoManagedObjectContext: managedContext)
         
-        newName.setValue(name, forKey: "name")
+        newSticker.setValue(name, forKey: "name")
+        newSticker.setValue(latitude, forKey: "latitude")
+        newSticker.setValue(longitude, forKey: "longitude")
         
         do {
             try managedContext.save()

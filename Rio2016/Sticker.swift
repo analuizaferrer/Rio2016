@@ -12,13 +12,13 @@ struct Sticker
 {
     let name: String?
     let description: String?
-    let latitude: String?
-    let longitude: String?
+    let latitude: Double?
+    let longitude: Double
     let cover: String?
     let photo: String?
     let date: String?
     
-    init(name: String, description: String, latitude: String, longitude: String, cover: String, photo: String, date: String)
+    init(name: String, description: String, latitude: Double, longitude: Double, cover: String, photo: String, date: String)
     {
         self.name = name
         self.description = description
