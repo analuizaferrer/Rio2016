@@ -54,7 +54,6 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         getStickerButton.setTitle("Get sticker!", forState: UIControlState.Normal)
         getStickerButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         getStickerButton.addTarget(self, action: #selector(StickerViewController.pictureCaptureView), forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(getStickerButton)
         
         
     //PictureView labels and buttons
@@ -140,6 +139,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         if location.distanceFromLocation(stickerLocation) < 500 {
             
             locationLabel.text = "You're here!"
+            self.view.addSubview(getStickerButton)
 
         }
         
