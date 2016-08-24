@@ -15,6 +15,7 @@ import AVFoundation
 class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var pictureView: UIView!
+    var confirmationView: UIView!
     
     //CoreLocation
     var locationManager = CLLocationManager()
@@ -38,6 +39,10 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
     let photoLibraryButton = UIButton(frame: CGRectMake(-20,600,320,50))
     let cameraButton = UIButton(frame: CGRectMake(170,600,320,50))
     var pictureImageView = UIImageView(frame: CGRectMake(0, 0, 375, 590))
+    
+    //ConfirmationView labels and buttons
+    let confirmButton = UIButton(frame: CGRectMake(170,600,320,50))
+    let cancelButton = UIButton(frame: CGRectMake(-20,600,320,50))
     
     var photo: UIImage?
 
@@ -72,7 +77,23 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         cameraButton.addTarget(self, action: #selector(StickerViewController.cameraButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         pictureView.addSubview(cameraButton)
         
-        pictureImageView.addSubview(pictureView)
+    //ConfirmationView labels and buttons
+        confirmationView = UIView(frame: CGRectMake(0, 0, view.frame.width, view.frame.height))
+        confirmationView.backgroundColor = UIColor.purpleColor()
+        
+        confirmButton.setTitle("Confirm", forState: UIControlState.Normal)
+        confirmButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        confirmButton.titleLabel?.textAlignment = NSTextAlignment.Left
+        confirmButton.addTarget(self, action: #selector(StickerViewController.confirmButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+        confirmationView.addSubview(confirmButton)
+        
+        cancelButton.setTitle("Cancel", forState: UIControlState.Normal)
+        cancelButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        cancelButton.titleLabel?.textAlignment = NSTextAlignment.Left
+        cancelButton.addTarget(self, action: #selector(StickerViewController.cancelButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+        confirmationView.addSubview(cancelButton)
+        
+        confirmationView.addSubview(pictureImageView)
         
     //AVFoundation
         
@@ -167,7 +188,11 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
             guard let image = UIImage(data: imageData) else { return }
             
             self.pictureImageView.image = image
-            self.pictureView.addSubview(self.pictureImageView)
+//            self.confirmationView.addSubview(self.pictureImageView)
+            
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            
+            self.view.addSubview(self.confirmationView)
         }
     }
 
@@ -176,6 +201,8 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         picker.delegate = self
         picker.sourceType = .PhotoLibrary
         presentViewController(picker, animated: true, completion: nil)
+        
+        self.view.addSubview(confirmationView)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -237,6 +264,18 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
     func pictureCaptureView () {
         
         self.view.addSubview(pictureView)
+        
+    }
+    
+    func confirmButtonAction () {
+        
+//        self.presentViewController(AlbumCollectionViewController(), animated: true, completion: nil)
+        
+    }
+    
+    func cancelButtonAction () {
+        
+        self.view = pictureView
         
     }
 
