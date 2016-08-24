@@ -34,6 +34,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
     let nameLabel = UILabel(frame: CGRectMake(20,100,320,50))
     let locationLabel = UILabel(frame: CGRectMake(20,200,320,50))
     var getStickerButton = UIButton(frame: CGRectMake(100,500,320,50))
+    var descriptionText = UITextView(frame: CGRectMake(100,500,320,50))
     
     //PictureView labels and buttons
     let photoLibraryButton = UIButton(frame: CGRectMake(-20,600,320,50))
@@ -55,6 +56,9 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         
         nameLabel.text = stickerManagedObject.valueForKey("name") as? String
         self.view.addSubview(nameLabel)
+        
+        descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
+        self.view.addSubview(descriptionText)
         
         getStickerButton.setTitle("Get sticker!", forState: UIControlState.Normal)
         getStickerButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)

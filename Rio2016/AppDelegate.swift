@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let christTheRedeemer = Sticker(name: "Christ the Redeemer", description: "", latitude: -22.9519, longitude: -43.2105, cover: "", photo: "", date: "")
     let sugarLoaf = Sticker(name: "Sugar Loaf", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
-    let copacabanaBeach = Sticker(name: "Copacabana Beach", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let copacabanaBeach = Sticker(name: "Copacabana Beach", description: "Located in South Zone of Rio, Copacabana Beach is one of the most famous and most beautiful beaches in the world. The atmosphere is very vibrant and the people are colorful and fun loving. Get to it by taking the subway on Line 1 or take one of the pubic buses. Copacabana beach runs between Princesa Isabel Avenue and lifeguard Post 6. The beach runs for 2.2 miles (4 km) in an east west direction running from Posto Dois to Posto Seis. Stop by one of the several beach bars and enjoy a gold cup of chopp (draft beer) and refeição (herbed meat and fried onions). Take a walk along the beach to enjoy some of the most incredible sand sculptures and when you get thirsty try some of the agua de coco or coconut water straight from the coconut.", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
     let pucRio = Sticker(name: "PUC-Rio", description: "", latitude: -22.9793, longitude: -43.2331, cover: "", photo: "", date: "")
     let lapaArches = Sticker(name: "Lapa Arches", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
     let saintTeresaTram = Sticker(name: "Saint Teresa Tram", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
@@ -46,10 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             defaults.setBool(true, forKey: hasLaunchedKey)
             
-            stickerList += [christTheRedeemer, sugarLoaf, copacabanaBeach, pucRio]
+            stickerList += [christTheRedeemer, sugarLoaf, copacabanaBeach, pucRio, lapaArches, saintTeresaTram, ruinsPark, selaronsSteps, municipalTheatre, imperialPalace, quintaDaBoaVista, lagoa, botanicalGarden, tijucaForest]
             
             for sticker in stickerList {
-                saveRioStickersInCoreData(sticker.name!, latitude: sticker.latitude!, longitude: sticker.longitude)
+                saveRioStickersInCoreData(sticker.name!, description: sticker.description!, latitude: sticker.latitude!, longitude: sticker.longitude)
             }
             
         }
@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func saveRioStickersInCoreData(name: String, latitude: Double, longitude: Double) {
+    func saveRioStickersInCoreData(name: String, description: String, latitude: Double, longitude: Double) {
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -66,6 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let newSticker = NSManagedObject(entity: stickerEntity!, insertIntoManagedObjectContext: managedContext)
         
         newSticker.setValue(name, forKey: "name")
+        newSticker.setValue(description, forKey: "stickerDescription")
         newSticker.setValue(latitude, forKey: "latitude")
         newSticker.setValue(longitude, forKey: "longitude")
         
