@@ -14,10 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    // Praia de Copacabana, Arcos da Lapa, Bonde de Santa Teresa, Parque das Ruínas, Escadaria Selaron, Theatro Municipal, Paço Imperial, Quinta da Boa Vista, Lagoa, Jardim Botânico, Pão de Açúcar, Cristo Redentor, Floresta da Tijuca.
+    
     let christTheRedeemer = Sticker(name: "Christ the Redeemer", description: "", latitude: -22.9519, longitude: -43.2105, cover: "", photo: "", date: "")
     let sugarLoaf = Sticker(name: "Sugar Loaf", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
     let copacabanaBeach = Sticker(name: "Copacabana Beach", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
     let pucRio = Sticker(name: "PUC-Rio", description: "", latitude: -22.9793, longitude: -43.2331, cover: "", photo: "", date: "")
+    let lapaArches = Sticker(name: "Lapa Arches", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let saintTeresaTram = Sticker(name: "Saint Teresa Tram", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let ruinsPark = Sticker(name: "Ruins Park", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let selaronsSteps = Sticker(name: "Selaron's Steps", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let municipalTheatre = Sticker(name: "Municipal Theatre", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let imperialPalace = Sticker(name: "Imperial Palace", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let quintaDaBoaVista = Sticker(name: "Quinta da Boa Vista", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let lagoa = Sticker(name: "Lagoa", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let botanicalGarden = Sticker(name: "Botanical Garden", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
+    let tijucaForest = Sticker(name: "Tijuca Forest", description: "", latitude: 0, longitude: 0, cover: "", photo: "", date: "")
     
     var stickerList: [Sticker] = []
 
