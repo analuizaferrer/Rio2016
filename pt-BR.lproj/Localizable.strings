@@ -27,6 +27,42 @@ RUINS_PARK = "O programa é perfeito para relaxar, namorar ou conversar debruça
 SELARONS_STEPS = "Escadaria Selarón";
 SELARONS_STEPS_DESCRIPTION = "A escadaria, que fica entre a rua Joaquim Silva, na Lapa, e a rua Pinto Martins, no bairro de Santa Teresa, fica a apenas cinco minutos dos Arcos da Lapa. Obra do artista plástico chileno Jorge Selarón, a escadaria reúne diversos azulejos de várias partes do Brasil e do mundo.";
 
+MUNICIPAL_THEATRE = "Municipal Theatre";
+MUNICIPAL_THEATRE_DESCRIPTION = "Inaugurado em 1909, o Theatro Municipal é uma das principais casas de espetáculo do Brasil e da América Latina. Ao longo de pouco mais de um século de história, o Theatro Municipal recebeu grandes artistas internacionais e importantes nomes da cultura brasileiras, incluindo representantes da dança, música, ópera e artes cênicas. O projeto que deu início à construção do Theatro Municipal foi criado a partir da fusão dos projetos arquitetônicos de Francisco de Oliveira Passos e do francês Albert Guilbert, empatados no concurso para criação do desenho do novo teatro. O desenho foi inspirado na Ópera de Paris. Desde a década de 30, o Theatro Municipal do Rio de Janeiro tem a preocupação de manter um corpo artístico próprio. Hoje é a única instituição cultural brasileira a manter simultaneamente um coro, uma orquestra sinfônica e uma companhia de ballet.";
+
+IMPERIAL_PALACE = "Paço Imperial";
+IMPERIAL_PALACE_DESCRIPTION = "Com a chegada da Corte de D. João VI ao Rio de Janeiro, o Paço se transformou em sede dos governos do Reinado e do Império. Após a Proclamação da República, nele foram instalados os Correios e Telégrafos. Em 1938, foi tombado pelo Patrimônio Histórico e Artístico Nacional e hoje é um dos marcos da história cultural da cidade. Desde 1985, o Paço Imperial é um centro cultural vinculado ao Instituto do Patrimônio Histórico e Artístico Nacional, do Ministério da Cultura, e oferece exposições incríveis durante todo ano com entrada franca.";
+
+QUINTA_DA_BOA_VISTA = "Quinta da Boa Vista"
+QUINTA_DA_BOA_VISTA_DESCRIPTION = "Localizado no bairro de São Cristóvão, a Quinta da Boa Vista é um dos maiores parques urbanos da cidade, com cerca de 155 mil metros quadrados. Preserva os jardins e lagos criados pelo paisagista francês Auguste Glaziou; o antigo palácio da famíla real, onde hoje funciona o Museu Nacional; construções e estátuas de bronze originais, como o Templo de Apolo; e o monumental portão, presente de casamento do Duque de Northumberland ao jovem casal D. Pedro I e a Imperatriz, D. Leopoldina, que hoje recepciona os visitantes do Jardim Zoológico. Frequentadores de todas as idades aproveitam a ampla área verde para a prática de esportes durante todos os dias da semana. O pedalinho no lago principal, as quadras poliesportivas e passeio pelas grutas artificiais também atraem muitos jovens e crianças. Os agradáveis jardins também é muito procurados para a realização de piqueniques.";
+
+LAGOA = "Lagoa";
+LAGOA_DESCRIPTION = "O cenário é perfeito para os esportes náuticos, como remo e canoagem. Quem preferir a terra firme pode optar por caminhar ou pedalar em seu entorno, de 8 km, sempre movimentado, principalmente no final da tarde. Depois de tanto esforço, nada melhor que uma boa água de coco, em um dos vários quiosques, para completar o programa.";
+
+BOTANICAL_GARDENS = "Jardim Botânico";
+BOTANICAL_GARDENS_DESCRIPTION = "Fundado em 1808 por Dom João VI, o Jardim Botânico é um importante ponto turístico da cidade e amplamente visitado por pesquisadores que estudam as centenas de espécies que o habitam. Com área total de 137 hectares, sendo 54 de área cultivada, o Jardim Botânico abriga coleções raras de bromélias e orquídeas, além de árvores centenárias e plantas exóticas. O jardim também tem obras do início do século XVI, guardando um rico patrimônio histórico e cultural. Entre os monumentos destacam-se as estátuas de Eco e Narciso de mestre Valentim, o Portal da Academia de Belas Artes, projetado por Grandjean de Montigny, e o Jardim Japonês, criado em 1935 a partir da doação de 65 espécies de plantas típicas do Japão. O parque também é um excelente local para observação de pássaros, pois conta com mais de cem diferentes espécies nas copas e troncos de suas árvores.";
+
+TIJUCA_FOREST = "Floresta da Tijuca";
+TIJUCA_FOREST_DESCRIPTION = "Uma das maiores florestas urbanas do mundo, foi criada em 1861 pelo imperador Pedro II para reflorestar a área atingida pelo desmatamento causado pelo cultivo de cana e café. Este setor do Parque Nacional da Tijuca reúne atrativos como o Pico da Tijuca, o Pico do Papagaio, a Cascatinha Taunay. Esta área preservada de Mata Atlântica é bastante procurada por cariocas e turistas para a prática de atividades físicas, passeios e caminhadas. Pássaros, plantas nativas e árvores frutíferas compõem a flora e a fauna da Floresta da Tijuca.";
+
+ARPOADOR = "Arpoador";
+ARPOADOR_DESCRIPTION = "Uma das praias preferidas de cariocas e turistas pela beleza de sua paisagem e pela prática do surfe, tanto no verão quanto no inverno. Possui 800m de extensão entre o Forte de Copacabana e a Rua Francisco Otaviano com Av. Vieira Souto. O nome do local provém do fato de ser possível, no passado, arpoarem-se baleias nas proximidades da costa. Não se esqueça de visitar as pedras do Arpoador, o local mais lindo para se apreciar o mar e o pôr do sol!";
+
+MUSEUM_OF_TOMORROW = "Museu do Amanhã";
+MUSEUM_OF_TOMORROW_DESCRIPTION = "Perguntas como “de onde viemos?” e “para onde vamos?” permeiam o imaginário da população mundial e são comuns a todos os povos. Pensando nessas questões, e em tantas outras, o visionário projeto do Museu do Amanhã tomou forma e se torna, então, um amplo espaço de debate e estudo sobre o impacto de nossas ações e como podemos alterar o cenário decadente que se avizinha.";
+
+
+
+
+
+
+
+
+
+
+
+
+
 PHOTO_LIBRARY_BUTTON = "Galeria";
 GET_STICKER_BUTTON = "Pegue a figurinha!";
 CAMERA_BUTTON = "Câmera";
