@@ -86,7 +86,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         if segue.identifier == "place" {
            
-            var nextVC =  segue.destinationViewController as! StickerViewController
+            let nextVC =  segue.destinationViewController as! StickerViewController
             
             nextVC.stickerManagedObject = stickersList[cellIndex]
 

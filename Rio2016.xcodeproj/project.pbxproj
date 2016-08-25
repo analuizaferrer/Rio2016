@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18479E2F1D66422900694CD1 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E2E1D66422900694CD1 /* Sticker.swift */; };
 		18479E311D6A789F00694CD1 /* StickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E301D6A789F00694CD1 /* StickerViewController.swift */; };
+		18479E371D6F209500694CD1 /* StickerDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18479E361D6F209500694CD1 /* StickerDescriptionView.swift */; };
 		1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867FA861D52EB3700A16CBC /* AppDelegate.swift */; };
 		1867FA8E1D52EB3700A16CBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8D1D52EB3700A16CBC /* Assets.xcassets */; };
 		1867FA911D52EB3700A16CBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1867FA8F1D52EB3700A16CBC /* LaunchScreen.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		18479E2E1D66422900694CD1 /* Sticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 		18479E301D6A789F00694CD1 /* StickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerViewController.swift; sourceTree = "<group>"; };
+		18479E361D6F209500694CD1 /* StickerDescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerDescriptionView.swift; sourceTree = "<group>"; };
 		1867FA831D52EB3700A16CBC /* Rio2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rio2016.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1867FA861D52EB3700A16CBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1867FA8D1D52EB3700A16CBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				F6EF6FC91D66AE3000AA8DC3 /* AlbumCollectionViewController.swift */,
+				18479E361D6F209500694CD1 /* StickerDescriptionView.swift */,
 				18479E301D6A789F00694CD1 /* StickerViewController.swift */,
 			);
 			name = Controller;
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18479E311D6A789F00694CD1 /* StickerViewController.swift in Sources */,
+				18479E371D6F209500694CD1 /* StickerDescriptionView.swift in Sources */,
 				1867FA871D52EB3700A16CBC /* AppDelegate.swift in Sources */,
 				18479E2F1D66422900694CD1 /* Sticker.swift in Sources */,
 				F6EF6FCA1D66AE3000AA8DC3 /* AlbumCollectionViewController.swift in Sources */,

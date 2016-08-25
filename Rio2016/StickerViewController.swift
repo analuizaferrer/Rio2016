@@ -45,6 +45,8 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
     let confirmButton = UIButton(frame: CGRectMake(170,600,320,50))
     let cancelButton = UIButton(frame: CGRectMake(-20,600,320,50))
     
+    var selectedDevice: String?
+    
     var photo: UIImage?
 
     override func viewDidLoad() {
@@ -194,9 +196,11 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
             self.pictureImageView.image = image
 //            self.confirmationView.addSubview(self.pictureImageView)
             
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            self.photo = image
             
             self.view.addSubview(self.confirmationView)
+            
+            self.selectedDevice = "camera"
         }
     }
 
@@ -215,6 +219,8 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         
         self.pictureImageView.image = photo
         self.pictureView.addSubview(self.pictureImageView)
+        
+        self.selectedDevice = "photo library"
         
     }
     
@@ -272,6 +278,10 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
     }
     
     func confirmButtonAction () {
+        
+        if self.selectedDevice == "camera" {
+            UIImageWriteToSavedPhotosAlbum(photo!, nil, nil, nil)
+        }
         
 //        self.presentViewController(AlbumCollectionViewController(), animated: true, completion: nil)
         
