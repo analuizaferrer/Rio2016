@@ -26,3 +26,17 @@ RUINS_PARK = "O programa é perfeito para relaxar, namorar ou conversar debruça
 
 SELARONS_STEPS = "Escadaria Selarón";
 SELARONS_STEPS_DESCRIPTION = "A escadaria, que fica entre a rua Joaquim Silva, na Lapa, e a rua Pinto Martins, no bairro de Santa Teresa, fica a apenas cinco minutos dos Arcos da Lapa. Obra do artista plástico chileno Jorge Selarón, a escadaria reúne diversos azulejos de várias partes do Brasil e do mundo.";
+
+PHOTO_LIBRARY_BUTTON = "Galeria";
+GET_STICKER_BUTTON = "Pegue a figurinha!";
+CAMERA_BUTTON = "Câmera";
+CONFIRM_BUTTON = "Confirmar";
+CANCEL_BUTTON = "Cancelar";
+
+ALERT_TITLE = "Peraí...";
+ALERT_BODY = "Antes de continuar, Rio 2016 gostaria de ter acesso a sua localização. Por favor, ative os Serviços de Localização nas configurações do seu celular.";
+
+HERE_LABEL = "Você está aqui!";
+
+VISIT = "Visite";
+TO_GET_STICKER = "para pegar a figurinha!";
