@@ -7,3 +7,22 @@
 */
 
 CHRIST_THE_REDEEMER = "Cristo Redentor";
+CHRIST_THE_REDEEMER_DESCRIPTION = "Está situado no Parque Nacional da Tijuca, a 710 metros do nível do mar, de onde se pode apreciar uma das mais belas vistas da cidade. Ao todo são 220 degraus que levam até os pés da famosa estátua, eleita uma das Sete Maravilhas do Mundo em votação organizada em 2007 pela instituição Suíça New 7 Wonders Foundation. O monumento é acessível via trem, van ou carro. Para chegar ao monumento, há um agradável passeio de trem que, durante vinte minutos, atravessa a Mata Atlântica até chegar ao topo do Corcovado. Para facilitar o acesso dos visitantes, foram construídos três elevadores panorâmicos e quatro escadas rolantes. O visual é estonteante, o que torna o programa imperdível para quem visita a cidade.";
+
+SUGAR_LOAF = "Pão de Açúcar";
+SUGAR_LOAF_DESCRIPTION = "Inaugurado em 1912, o Bondinho do Pão de Açúcar foi o primeiro teleférico do Brasil e terceiro no mundo, ligando o Morro da Urca ao Morro do Pão de Açúcar. Desde então, mais de 40 milhões de pessoas já utilizaram os bondinhos. Do alto dos dois morros se descortina uma deslumbrante paisagem da cidade, incluindo a enseada de Botafogo, a orla de Copacabana e a entrada da Baía de Guanabara. No verão, o anfiteatro localizado no alto do Morro da Urca é palco para shows e eventos noturnos, aliando divertimento a um belíssimo visual das luzes da cidade.";
+
+COPACABANA_BEACH = "Copacabana Beach";
+COPACABANA_BEACH_DESCRIPTION = "Carinhosamente apelidada pela população de Princesinha do Mar, uma canção popular dos brasileiros João de Barro – o Braguinha – e Alberto Ribeiro, a praia de Copacabana localiza-se no bairro de mesmo nome, na zona Sul da cidade do Rio de Janeiro. Copacabana conta com bicicletários, ciclovia, quiosques, hotéis, bares e restaurantes, frequentados tanto de dia como à noite. Possui também dois Fortes Militares, um em cada extremidade da praia, com vistas panorâmicas, abertos à visitação. Palco da maior festa de Réveillon do planeta, com seus fogos mundialmente conhecidos, Copacabana reúne mais de três milhões de pessoas a cada passagem de ano.";
+
+LAPA_ARCHES = "Arcos da Lapa";
+LAPA_ARCHES_DESCRIPTION = "O antigo Aqueduto da Carioca, conhecido como Arcos da Lapa, é um dos cartões postais da cidade, além de ser o símbolo mais representativo do Rio Antigo preservado na região boêmia da Lapa. A estrutura, em pedra argamassada, apresenta estilo românico, caiada, possui 42 arcos duplos e óculos na parte superior. Os Arcos da Lapa são considerados a obra arquitetônica de maior porte empreendida no Brasil durante o período colonial. Ao seu redor, estão duas das mais importantes casas de shows da cidade: a Fundição Progresso e o Circo Voador.";
+
+SAINT_TERESA_TRAM = "Bondinho de Santa Teresa";
+SAINT_TERESA_TRAM_DESCRIPTION = "As características originais do Bondinho de Santa Teresa foram preservadas e seus aspectos externos foram listados como patrimônio nacional pelo Governo do Estado em 1983. O passeio começa na área do centro da cidade, passando pelos Arcos da Lapa e os declives do distrito, e pontos de referência como o Parque das Ruínas - um observatório com uma vista espetacular do Rio de Janeiro.";
+
+RUINS_PARK = "Parque das Ruínas";
+RUINS_PARK = "O programa é perfeito para relaxar, namorar ou conversar debruçado sobre a bela paisagem do centro e da Baía de Guanabara. Para quem quer se divertir com a família, o lugar também é perfeito, já que o Centro Cultural do parque conta com programação gratuita e intensa como exposições, teatros infantis, apresentações de circos e música. Aos sábados e domingos, há programação especial para crianças e um farto café da manhã servido pela cafeteria local. O Centro Cultural Parque das Ruínas foi a casa da grande mecenas da Belle Époque carioca, Laurinda Santos Lobo. Conhecida como a “marechala da elegância”, Laurinda reunia intelectuais e artistas nas magníficas dependências do palacete, que hoje é um dos mais belos projetos premiados do arquiteto Ernani Freire e casa de trabalhos experimentais de artes plásticas. Imperdível!";
+
+SELARONS_STEPS = "Escadaria Selarón";
+SELARONS_STEPS_DESCRIPTION = "A escadaria, que fica entre a rua Joaquim Silva, na Lapa, e a rua Pinto Martins, no bairro de Santa Teresa, fica a apenas cinco minutos dos Arcos da Lapa. Obra do artista plástico chileno Jorge Selarón, a escadaria reúne diversos azulejos de várias partes do Brasil e do mundo.";
