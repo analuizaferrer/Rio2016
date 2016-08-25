@@ -7,3 +7,17 @@
 */
 
 CHRIST_THE_REDEEMER = "Christ the Redeemer";
+
+PHOTO_LIBRARY_BUTTON = "Photo Library";
+GET_STICKER_BUTTON = "Get sticker!";
+CAMERA_BUTTON = "Camera";
+CONFIRM_BUTTON = "Confirm";
+CANCEL_BUTTON = "Cancel";
+
+ALERT_TITLE = "Hold Up...";
+ALERT_BODY = "Before you continue, Rio 2016 wants access to your location. Please turn on Location Services in your device settings.";
+
+HERE_LABEL = "You're here!";
+
+VISIT = "Visit";
+TO_GET_STICKER = "to get this sticker!";

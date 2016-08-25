@@ -7,3 +7,17 @@
 */
 
 CHRIST_THE_REDEEMER = "Cristo Redentor";
+
+PHOTO_LIBRARY_BUTTON = "Galeria";
+GET_STICKER_BUTTON = "Pegue a figurinha!";
+CAMERA_BUTTON = "Câmera";
+CONFIRM_BUTTON = "Confirmar";
+CANCEL_BUTTON = "Cancelar";
+
+ALERT_TITLE = "Peraí...";
+ALERT_BODY = "Antes de continuar, Rio 2016 gostaria de ter acesso a sua localização. Por favor, ative os Serviços de Localização nas configurações do seu celular.";
+
+HERE_LABEL = "Você está aqui!";
+
+VISIT = "Visite";
+TO_GET_STICKER = "para pegar a figurinha!";

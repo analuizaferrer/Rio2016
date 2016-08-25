@@ -62,7 +62,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
         self.view.addSubview(descriptionText)
         
-        getStickerButton.setTitle("Get sticker!", forState: UIControlState.Normal)
+        getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState: UIControlState.Normal)
         getStickerButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         getStickerButton.addTarget(self, action: #selector(StickerViewController.pictureCaptureView), forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -71,13 +71,13 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         pictureView = UIView(frame: CGRectMake(0, 0, view.frame.width, view.frame.height))
         pictureView.backgroundColor = UIColor.cyanColor()
         
-        photoLibraryButton.setTitle("Photo library", forState: UIControlState.Normal)
+        photoLibraryButton.setTitle(NSLocalizedString("PHOTO_LIBRARY_BUTTON", comment: ""), forState: UIControlState.Normal)
         photoLibraryButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         photoLibraryButton.titleLabel?.textAlignment = NSTextAlignment.Left
         photoLibraryButton.addTarget(self, action: #selector(StickerViewController.photoLIbraryButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         pictureView.addSubview(photoLibraryButton)
         
-        cameraButton.setTitle("Camera", forState: UIControlState.Normal)
+        cameraButton.setTitle(NSLocalizedString("CAMERA_BUTTON", comment: ""), forState: UIControlState.Normal)
         cameraButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         cameraButton.titleLabel?.textAlignment = NSTextAlignment.Left
         cameraButton.addTarget(self, action: #selector(StickerViewController.cameraButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
@@ -87,13 +87,13 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         confirmationView = UIView(frame: CGRectMake(0, 0, view.frame.width, view.frame.height))
         confirmationView.backgroundColor = UIColor.purpleColor()
         
-        confirmButton.setTitle("Confirm", forState: UIControlState.Normal)
+        confirmButton.setTitle(NSLocalizedString("CONFIRM_BUTTON", comment: ""), forState: UIControlState.Normal)
         confirmButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         confirmButton.titleLabel?.textAlignment = NSTextAlignment.Left
         confirmButton.addTarget(self, action: #selector(StickerViewController.confirmButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         confirmationView.addSubview(confirmButton)
         
-        cancelButton.setTitle("Cancel", forState: UIControlState.Normal)
+        cancelButton.setTitle(NSLocalizedString("CANCEL_BUTTON", comment: ""), forState: UIControlState.Normal)
         cancelButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         cancelButton.titleLabel?.textAlignment = NSTextAlignment.Left
         cancelButton.addTarget(self, action: #selector(StickerViewController.cancelButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
@@ -146,7 +146,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
     }
     
     func showAlert() {
-        let alert = UIAlertController(title: "Hold Up...", message: "Before you continue, Rio 2016 wants access to your location. Please turn on Location Services in your device settings.", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("ALERT_TITLE", comment: ""), message: NSLocalizedString("ALERT_BODY", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -167,14 +167,14 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate, UIImag
         
         if location.distanceFromLocation(stickerLocation) < 500 {
             
-            locationLabel.text = "You're here!"
+            locationLabel.text = NSLocalizedString("HERE_LABEL", comment: "")
             self.view.addSubview(getStickerButton)
 
         }
         
         else {
             
-            locationLabel.text = "Visit \(stickerManagedObject.valueForKey("name") as! String) to get this sticker!"
+            locationLabel.text = NSLocalizedString("VISIT", comment: "") + " " + String(stickerManagedObject.valueForKey("name")!) + " " + NSLocalizedString("TO_GET_STICKER", comment: "")
             
         }
         
