@@ -31,17 +31,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateLocation()
-        
         //Labels and buttons setup
-        
-        if stickerManagedObject.valueForKey("photo") as? String != "" {
-            
-            stickerImageView.image = base64Decode((stickerManagedObject.valueForKey("photo") as? String)!)
-            
-        }
-        
-        self.view.addSubview(stickerImageView)
         
         nameLabel.text = stickerManagedObject.valueForKey("name") as? String
         self.view.addSubview(nameLabel)
@@ -49,12 +39,26 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
         self.view.addSubview(descriptionText)
         
-        self.view.addSubview(locationStatusLabel)
+        if stickerManagedObject.valueForKey("photo") as? String != nil {
+            
+            stickerImageView.image = base64Decode((stickerManagedObject.valueForKey("photo") as? String)!)
+            
+        }
         
-        getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState: UIControlState.Normal)
-        getStickerButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        getStickerButton.addTarget(self, action: #selector(StickerViewController.getStickerButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+        else {
+            
+            updateLocation()
+            
+            self.view.addSubview(locationStatusLabel)
+            
+            getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState: UIControlState.Normal)
+            getStickerButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+            getStickerButton.addTarget(self, action: #selector(StickerViewController.getStickerButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+            
+        }
         
+        self.view.addSubview(stickerImageView)
+    
     }
 
     override func didReceiveMemoryWarning() {
