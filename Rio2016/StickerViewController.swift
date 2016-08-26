@@ -37,7 +37,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
         if stickerManagedObject.valueForKey("photo") as? String != "" {
             
-            //decode Base64 function here
+            stickerImageView.image = base64Decode((stickerManagedObject.valueForKey("photo") as? String)!)
             
         }
         
@@ -60,6 +60,15 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func base64Decode (strBase64: String) -> UIImage {
+        
+        let decodedData: NSData = NSData(base64EncodedString: strBase64, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
+        
+        let decodedImage: UIImage = UIImage(data: decodedData)!
+        
+        return decodedImage
     }
     
     func checkCoreLocationPermission () {
