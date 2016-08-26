@@ -23,10 +23,10 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     
     //Labels and buttons
     let stickerImageView = UIImageView(frame: CGRectMake(0,100,400,350))
-    let nameLabel = UILabel(frame: CGRectMake(100,70,320,50))
+    let nameLabel = UILabel(frame: CGRectMake(0,60,UIScreen.mainScreen().bounds.size.width,50))
     var getStickerButton = UIButton(frame: CGRectMake(100,500,320,50))
-    let locationStatusLabel = UILabel(frame: CGRectMake(20,500,320,50))
-    var descriptionText = UITextView(frame: CGRectMake(100,500,320,50))
+    let locationStatusLabel = UILabel(frame: CGRectMake(20,600,320,50))
+    var descriptionText = UITextView(frame: CGRectMake(20,500,320,50))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         //Labels and buttons setup
         
         nameLabel.text = stickerManagedObject.valueForKey("name") as? String
+        nameLabel.textAlignment = NSTextAlignment.Center
         self.view.addSubview(nameLabel)
         
         descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
