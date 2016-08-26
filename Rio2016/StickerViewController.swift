@@ -35,13 +35,13 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
         //Labels and buttons setup
         
-//        if stickerManagedObject.valueForKey("image") as? String != "" {
-//            
-//            //display image here
-//            
-//        }
+        if stickerManagedObject.valueForKey("photo") as? String != "" {
+            
+            //decode Base64 function here
+            
+        }
         
-//        self.view.addSubview(stickerImageView)
+        self.view.addSubview(stickerImageView)
         
         nameLabel.text = stickerManagedObject.valueForKey("name") as? String
         self.view.addSubview(nameLabel)
