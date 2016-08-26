@@ -175,6 +175,44 @@ class NewStickerViewController: UIViewController, UIImagePickerControllerDelegat
         let imageData: NSData = UIImagePNGRepresentation(image)!
         let strBase64: String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         
+        updateStickerObject(strBase64)
+        
+    }
+    
+    func updateStickerObject(image: String) {
+        let appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context: NSManagedObjectContext = appDel.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Sticker")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", stickerManagedObject.valueForKey("name") as! String)
+        
+        do {
+            
+            if let fetchResults = try appDel.managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
+                if fetchResults.count != 0{
+                    
+                    let managedObject = fetchResults[0]
+                    managedObject.setValue(image, forKey: "photo")
+                    
+                    do {
+                        try context.save()
+                    }
+                        
+                    catch let error as NSError  {
+                        
+                        print("Could not save \(error), \(error.userInfo)")
+                        
+                    }
+    
+                }
+            }
+            
+        }
+            
+        catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
     }
     
     func cancelButtonAction () {
