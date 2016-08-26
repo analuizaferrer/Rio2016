@@ -66,6 +66,8 @@ class AlbumCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stickerCell", forIndexPath: indexPath)
       
         let nameLabel = UILabel(frame: CGRectMake(18,0,320,50))
+        nameLabel.lineBreakMode = .ByWordWrapping
+        nameLabel.numberOfLines = 0
         cell.contentView.addSubview(nameLabel)
         
         let thisSticker = stickersList[indexPath.row]

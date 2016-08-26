@@ -50,6 +50,8 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
             
             updateLocation()
             
+            locationStatusLabel.lineBreakMode = .ByWordWrapping
+            locationStatusLabel.numberOfLines = 0
             self.view.addSubview(locationStatusLabel)
             
             getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState: UIControlState.Normal)

@@ -73,6 +73,8 @@ class NewStickerViewController: UIViewController, UIImagePickerControllerDelegat
         cancelButton.addTarget(self, action: #selector(NewStickerViewController.cancelButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         confirmationView.addSubview(cancelButton)
         
+        pictureImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,7 +115,7 @@ class NewStickerViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        previewLayer?.frame = CGRectMake(0, 64, view.frame.width, 455)
+        previewLayer?.frame = CGRectMake(0, 64, view.frame.width, 500)
     }
 
     
