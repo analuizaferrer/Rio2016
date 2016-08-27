@@ -26,7 +26,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     let nameLabel = UILabel(frame: CGRectMake(0,90,UIScreen.mainScreen().bounds.size.width,50))
     var getStickerButton = UIButton(frame: CGRectMake(500,100,240,50))
     let locationStatusLabel = UILabel(frame: CGRectMake(20,600,320,50))
-    var descriptionText = UITextView(frame: CGRectMake(20,100,275,350))
+    var descriptionText = UITextView(frame: CGRectMake(20,120,275,350))
 
     override func viewDidLoad() {
         super.viewDidLoad()

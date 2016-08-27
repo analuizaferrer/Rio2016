@@ -56,7 +56,7 @@ class AlbumCollectionViewController: UICollectionViewController {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
-        //self.collectionView!.reloadData()
+        self.collectionView!.reloadData()
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,6 +70,7 @@ class AlbumCollectionViewController: UICollectionViewController {
       
 
         let stickerImageView = UIImageView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
+        
         
         if stickersList[indexPath.row].valueForKey("photo") as? String != nil {
             
@@ -86,13 +87,11 @@ class AlbumCollectionViewController: UICollectionViewController {
         }
         
         let nameLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
-//        let nameLabel = UILabel(frame: CGRectMake(20,15,80,80))
+
         nameLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         nameLabel.numberOfLines = 3
         nameLabel.font = UIFont(name: "Avenir-Heavy", size: 14)
-
         nameLabel.lineBreakMode = .ByWordWrapping
-        nameLabel.numberOfLines = 0
         nameLabel.textAlignment = .Center
         cell.contentView.addSubview(nameLabel)
         
@@ -120,14 +119,14 @@ class AlbumCollectionViewController: UICollectionViewController {
                         layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let size = CGSize(width: (self.view.frame.width-2)/3, height: (self.view.frame.width)/3)
+        let size = CGSize(width: 200, height: (self.view.frame.width)/3)
         
         return size
         
     }
 
     func collectionView(collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 1.0
+        return 15.0
     }
     
     func collectionView(collectionView: UICollectionView, layout
