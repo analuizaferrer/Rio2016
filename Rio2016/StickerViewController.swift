@@ -24,9 +24,9 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     //Labels and buttons
     let stickerImageView = UIImageView(frame: CGRectMake(0,100,400,350))
     let nameLabel = UILabel(frame: CGRectMake(0,90,UIScreen.mainScreen().bounds.size.width,50))
-    var getStickerButton = UIButton(frame: CGRectMake(100,100,20,50))
+    var getStickerButton = UIButton(frame: CGRectMake(500,100,240,50))
     let locationStatusLabel = UILabel(frame: CGRectMake(20,600,320,50))
-    var descriptionText = UITextView(frame: CGRectMake(50,400,320,300))
+    var descriptionText = UITextView(frame: CGRectMake(20,100,275,350))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +41,14 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
 
         descriptionText.font = UIFont(name: "Avenir-Roman", size: 16)
 
-                
+        getStickerButton.backgroundColor = UIColor(red: 255/255, green: 162/255, blue: 73/255, alpha: 1)
+        getStickerButton.layer.cornerRadius = 10
+        getStickerButton.titleLabel?.font = UIFont(name: "Avenir-Black", size: 16)
+        
+        
         descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
         self.view.addSubview(descriptionText)
+        descriptionText.backgroundColor = UIColor.clearColor()
         
         if stickerManagedObject.valueForKey("photo") as? String != nil {
             
@@ -60,7 +65,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
             self.view.addSubview(locationStatusLabel)
             
             getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState: UIControlState.Normal)
-            getStickerButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+            getStickerButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             getStickerButton.addTarget(self, action: #selector(StickerViewController.getStickerButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
             
         }
