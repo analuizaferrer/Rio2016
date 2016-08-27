@@ -22,6 +22,8 @@ class AlbumCollectionViewController: UICollectionViewController {
 
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView?.backgroundColor = UIColor.whiteColor()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +67,10 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stickerCell", forIndexPath: indexPath)
       
-        let nameLabel = UILabel(frame: CGRectMake(18,0,320,50))
+        let nameLabel = UILabel(frame: CGRectMake(20,15,80,80))
+        nameLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        nameLabel.numberOfLines = 3
+        nameLabel.font = UIFont(name: "Avenir-Heavy", size: 14)
         nameLabel.lineBreakMode = .ByWordWrapping
         nameLabel.numberOfLines = 0
         cell.contentView.addSubview(nameLabel)
