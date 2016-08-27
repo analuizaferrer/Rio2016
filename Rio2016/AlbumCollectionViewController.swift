@@ -65,10 +65,33 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stickerCell", forIndexPath: indexPath)
       
-        let nameLabel = UILabel(frame: CGRectMake(18,0,320,50))
+        let stickerImageView = UIImageView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
+        
+//        if stickersList[indexPath.row].valueForKey("photo") as? String != nil {
+//            
+//            //
+//            
+//        }
+//        
+//        else {
+//            
+//            stickerImageView.image = UIImage(named: "\((stickersList[indexPath.row].valueForKey("cover") as? String)!)")
+//            
+//            print(stickersList[indexPath.row].valueForKey("cover") as? String)
+//            
+//        }
+        
+        let nameLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
         nameLabel.lineBreakMode = .ByWordWrapping
         nameLabel.numberOfLines = 0
+        nameLabel.textAlignment = .Center
         cell.contentView.addSubview(nameLabel)
+        
+//        let numberLabel = UILabel(frame: CGRectMake(0,cell.frame.height/2,50,40))
+//        numberLabel.textColor = UIColor.blackColor()
+//        nameLabel.text = "\(indexPath.row + 1)"
+//        numberLabel.textAlignment = .Center
+//        cell.contentView.addSubview(numberLabel)
         
         let thisSticker = stickersList[indexPath.row]
        
@@ -88,7 +111,7 @@ class AlbumCollectionViewController: UICollectionViewController {
                         layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let size = CGSize(width: self.view.frame.width/3, height: self.view.frame.width/3)
+        let size = CGSize(width: (self.view.frame.width-2)/3, height: (self.view.frame.width-2)/3)
         
         return size
         
@@ -97,13 +120,13 @@ class AlbumCollectionViewController: UICollectionViewController {
     func collectionView(collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                                minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0
+        return 1.0
     }
     
     func collectionView(collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0
+        return 1.0
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
