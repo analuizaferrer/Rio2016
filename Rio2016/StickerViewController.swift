@@ -23,10 +23,10 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     
     //Labels and buttons
     let stickerImageView = UIImageView(frame: CGRectMake(0,100,400,350))
-    let nameLabel = UILabel(frame: CGRectMake(0,60,UIScreen.mainScreen().bounds.size.width,50))
-    var getStickerButton = UIButton(frame: CGRectMake(100,500,320,50))
+    let nameLabel = UILabel(frame: CGRectMake(0,90,UIScreen.mainScreen().bounds.size.width,50))
+    var getStickerButton = UIButton(frame: CGRectMake(100,100,20,50))
     let locationStatusLabel = UILabel(frame: CGRectMake(20,600,320,50))
-    var descriptionText = UITextView(frame: CGRectMake(20,500,320,50))
+    var descriptionText = UITextView(frame: CGRectMake(50,400,320,300))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +35,13 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
         nameLabel.text = stickerManagedObject.valueForKey("name") as? String
         nameLabel.textAlignment = NSTextAlignment.Center
+        nameLabel.font = UIFont(name: "Avenir-Black", size: 24)
+        nameLabel.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
         self.view.addSubview(nameLabel)
-        
+
+        descriptionText.font = UIFont(name: "Avenir-Roman", size: 16)
+
+                
         descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
         self.view.addSubview(descriptionText)
         
@@ -133,12 +138,15 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
         if location.distanceFromLocation(stickerLocation) < 500 {
             
+            
             locationStatusLabel.text = NSLocalizedString("HERE_LABEL", comment: "")
             self.view.addSubview(getStickerButton)
 
         }
         
         else {
+            
+
             
             locationStatusLabel.text = NSLocalizedString("VISIT", comment: "") + " " + String(stickerManagedObject.valueForKey("name")!) + " " + NSLocalizedString("TO_GET_STICKER", comment: "")
             
