@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "stickerCell"
 
 class AlbumCollectionViewController: UICollectionViewController {
 
@@ -67,8 +67,8 @@ class AlbumCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stickerCell", forIndexPath: indexPath)
-      
-
+        
+        
         let stickerImageView = UIImageView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
         
         
@@ -85,6 +85,8 @@ class AlbumCollectionViewController: UICollectionViewController {
             print(stickersList[indexPath.row].valueForKey("cover") as? String)
             
         }
+        cell.backgroundView = stickerImageView
+
         
         let nameLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
 
@@ -93,6 +95,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         nameLabel.font = UIFont(name: "Avenir-Heavy", size: 14)
         nameLabel.lineBreakMode = .ByWordWrapping
         nameLabel.textAlignment = .Center
+        nameLabel.clearsContextBeforeDrawing = true
         cell.contentView.addSubview(nameLabel)
         
         let numberLabel = UILabel(frame: CGRectMake(0,cell.frame.height/2,50,40))
