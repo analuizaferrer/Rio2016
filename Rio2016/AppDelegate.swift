@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let museumOfTomorrow = Sticker(name: NSLocalizedString("MUSEUM_OF_TOMORROW", comment: "Museum of Tomorrow"), description: NSLocalizedString("MUSEUM_OF_TOMORROW", comment: "Questions like “where did we come from?” and “where are we going?” pervade the thoughts of the world’s population and are common among all peoples. Reflecting on these questions, as well as others, the visionary project of the Museu do Amanhã(Museum of Tomorrow) took shape and became an ample space for debating and studying the impact of our actions and how we can alter the decaying scenario that draws close."), latitude: 0, longitude: 0, cover: "museumOfTomorrow", photo: "no photo", date: "")
         
-        return [christTheRedeemer, sugarLoaf, copacabanaBeach, pucRio, lapaArches, saintTeresaTram, ruinsPark, selaronsSteps, municipalTheatre, imperialPalace, quintaDaBoaVista, lagoaRodrigoDeFreitas, botanicalGarden, tijucaForest, arpoador, museumOfTomorrow]
+        return [christTheRedeemer, sugarLoaf, copacabanaBeach, lapaArches, saintTeresaTram, ruinsPark, selaronsSteps, municipalTheatre, imperialPalace, quintaDaBoaVista, lagoaRodrigoDeFreitas, botanicalGarden, tijucaForest, arpoador, museumOfTomorrow, pucRio]
     
     }
 

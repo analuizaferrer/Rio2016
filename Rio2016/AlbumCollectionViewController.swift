@@ -80,33 +80,19 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         else {
             
-            stickerImageView.image = UIImage(named: "\((stickersList[indexPath.row].valueForKey("cover") as? String)!)")
-            
-            print(stickersList[indexPath.row].valueForKey("cover") as? String)
+            let coverImage = UIImage(named: "\((stickersList[indexPath.row].valueForKey("cover") as? String)!)")
+            stickerImageView.image = coverImage
             
         }
         cell.backgroundView = stickerImageView
 
         
-        let nameLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
-
-        nameLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        nameLabel.numberOfLines = 3
-        nameLabel.font = UIFont(name: "Avenir-Heavy", size: 14)
-        nameLabel.lineBreakMode = .ByWordWrapping
-        nameLabel.textAlignment = .Center
-        nameLabel.clearsContextBeforeDrawing = true
-        cell.contentView.addSubview(nameLabel)
-        
-        let numberLabel = UILabel(frame: CGRectMake(0,cell.frame.height/2,50,40))
-        numberLabel.textColor = UIColor.blackColor()
-        nameLabel.text = "\(indexPath.row + 1)"
+        let numberLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
+        numberLabel.font = UIFont(name: "Avenir-Heavy", size: 14)
         numberLabel.textAlignment = .Center
+        numberLabel.clearsContextBeforeDrawing = true
+        numberLabel.text = "\(indexPath.row + 1)"
         cell.contentView.addSubview(numberLabel)
-        
-        let thisSticker = stickersList[indexPath.row]
-       
-        nameLabel.text = thisSticker.valueForKey("name") as? String
         
         return cell
     }
@@ -122,14 +108,14 @@ class AlbumCollectionViewController: UICollectionViewController {
                         layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let size = CGSize(width: 200, height: (self.view.frame.width)/3)
+        let size = CGSize(width: (self.view.frame.width/3)-2, height: (self.view.frame.width/3)-2)
         
         return size
         
     }
 
     func collectionView(collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 15.0
+        return 1.0
     }
     
     func collectionView(collectionView: UICollectionView, layout
@@ -148,5 +134,27 @@ class AlbumCollectionViewController: UICollectionViewController {
 
         }
         
+    }
+}
+
+extension UIImage{
+    
+    func alpha(value:CGFloat)->UIImage
+    {
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
+        
+        let ctx = UIGraphicsGetCurrentContext();
+        let area = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height);
+        
+        CGContextScaleCTM(ctx, 1, -1);
+        CGContextTranslateCTM(ctx, 0, -area.size.height);
+        CGContextSetBlendMode(ctx, CGBlendMode.Multiply);
+        CGContextSetAlpha(ctx, value);
+        CGContextDrawImage(ctx, area, self.CGImage);
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return newImage;
     }
 }
