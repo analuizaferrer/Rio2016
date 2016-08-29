@@ -22,12 +22,25 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     var stickerManagedObject: NSManagedObject!
     
     //Labels and buttons
-    let stickerImageView = UIImageView(frame: CGRectMake(0,100,400,350))
-    let nameLabel = UILabel(frame: CGRectMake(0,90,UIScreen.mainScreen().bounds.size.width,50))
-    var getStickerButton = UIButton(frame: CGRectMake(500,100,240,50))
-    let locationStatusLabel = UILabel(frame: CGRectMake(20,600,320,50))
-    var descriptionText = UITextView(frame: CGRectMake(20,120,275,350))
+   // let stickerImageView = UIImageView(frame: CGRectMake(0,100,400,350))
+ //   let nameLabel = UILabel(frame: CGRectMake(0,90,UIScreen.mainScreen().bounds.size.width,50))
+ //   var getStickerButton = UIButton(frame: CGRectMake(500,100,240,50))
+//    let locationStatusLabel = UILabel(frame: CGRectMake(20,600,320,50))
+ //   var descriptionText = UITextView(frame: CGRectMake(20,120,275,350))
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var stickerImageView: UIImageView!
 
+    @IBOutlet weak var locationStatusLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var getStickerButton: UIButton!
+    
+    @IBOutlet weak var descriptionText: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
