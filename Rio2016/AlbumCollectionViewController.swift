@@ -74,7 +74,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         if stickersList[indexPath.row].valueForKey("photo") as? String != nil {
             
-            //
+            stickerImageView.image = base64Decode((stickersList[indexPath.row].valueForKey("photo") as? String)!)
             
         }
         
@@ -134,6 +134,15 @@ class AlbumCollectionViewController: UICollectionViewController {
 
         }
         
+    }
+    
+    func base64Decode (strBase64: String) -> UIImage {
+        
+        let decodedData: NSData = NSData(base64EncodedString: strBase64, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
+        
+        let decodedImage: UIImage = UIImage(data: decodedData)!
+        
+        return decodedImage
     }
 }
 
