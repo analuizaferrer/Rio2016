@@ -69,6 +69,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
         self.view.addSubview(descriptionText)
         descriptionText.backgroundColor = UIColor.clearColor()
+        descriptionText.editable = false
     
     }
 
