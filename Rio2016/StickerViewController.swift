@@ -74,9 +74,9 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         nameLabel.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
         self.view.addSubview(nameLabel)
         
-        getStickerButton.backgroundColor = UIColor(red: 255/255, green: 162/255, blue: 73/255, alpha: 1)
-        getStickerButton.layer.cornerRadius = 10
-        getStickerButton.titleLabel?.font = UIFont(name: "Avenir-Black", size: 16)
+//        getStickerButton.backgroundColor = UIColor(red: 255/255, green: 162/255, blue: 73/255, alpha: 1)
+//        getStickerButton.layer.cornerRadius = 10
+//        getStickerButton.titleLabel?.font = UIFont(name: "Avenir-Black", size: 16)
         
         descriptionText.font = UIFont(name: "Avenir-Roman", size: 16)
         descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
