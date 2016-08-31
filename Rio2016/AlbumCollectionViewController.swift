@@ -63,8 +63,10 @@ class AlbumCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stickerCell", forIndexPath: indexPath)
         
         
-        let stickerImageView = UIImageView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
         let stickerView = UIView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
+        let stickerImageView = UIImageView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
+        stickerView.addSubview(stickerImageView)
+        
         
         stickerView.backgroundColor = UIColor.lightGrayColor()
 
@@ -73,12 +75,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         if stickersList[indexPath.row].valueForKey("photo") as? String != nil {
             
             stickerImageView.image = base64Decode((stickersList[indexPath.row].valueForKey("photo") as? String)!)
-        }
-        
-        else {
             
-            let coverImage = UIImage(named: "\((stickersList[indexPath.row].valueForKey("cover") as? String)!)")
-            stickerImageView.image = coverImage
         }
         
         cell.backgroundView = stickerView
