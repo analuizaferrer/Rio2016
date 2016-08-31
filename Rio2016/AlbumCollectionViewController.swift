@@ -12,8 +12,6 @@ import CoreData
 private let reuseIdentifier = "stickerCell"
 
 class AlbumCollectionViewController: UICollectionViewController {
-
-  var numberLabel: UILabel!
     
     var stickersList = [NSManagedObject]()
     
@@ -22,11 +20,8 @@ class AlbumCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView?.backgroundColor = UIColor.whiteColor()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +32,6 @@ class AlbumCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         
         fetchStickers()
-        
     }
     
     func fetchStickers() {
@@ -48,17 +42,15 @@ class AlbumCollectionViewController: UICollectionViewController {
         let fetchRequestSticker = NSFetchRequest(entityName: "Sticker")
         
         do {
-            
             let resultsSticker = try managedContext.executeFetchRequest(fetchRequestSticker)
             stickersList = resultsSticker as! [NSManagedObject]
-            
         }
         
         catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         
-       // self.collectionView!.reloadData()
+        self.collectionView!.reloadData()
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -81,27 +73,27 @@ class AlbumCollectionViewController: UICollectionViewController {
         if stickersList[indexPath.row].valueForKey("photo") as? String != nil {
             
             stickerImageView.image = base64Decode((stickersList[indexPath.row].valueForKey("photo") as? String)!)
-            
         }
         
         else {
             
             let coverImage = UIImage(named: "\((stickersList[indexPath.row].valueForKey("cover") as? String)!)")
             stickerImageView.image = coverImage
-            
         }
+        
         cell.backgroundView = stickerView
 
+        let numberLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
+        numberLabel.font = UIFont(name: "Avenir-Heavy", size: 50)
+        numberLabel.textColor = UIColor.whiteColor()
+        numberLabel.textAlignment = .Center
+        numberLabel.clearsContextBeforeDrawing = true
+        numberLabel.text = "\(indexPath.row + 1)"
         
+        for subview in cell.contentView.subviews {
+            subview.removeFromSuperview()
+        }
         
-        
-        self.numberLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
-        self.numberLabel.font = UIFont(name: "Avenir-Heavy", size: 50)
-        self.numberLabel.textColor = UIColor.whiteColor()
-        self.numberLabel.textAlignment = .Center
-        self.numberLabel.clearsContextBeforeDrawing = true
-        self.numberLabel.text = "\(indexPath.row + 1)"
-
         cell.contentView.addSubview(numberLabel)
         
         return cell

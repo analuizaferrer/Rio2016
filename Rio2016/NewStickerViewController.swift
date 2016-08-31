@@ -27,13 +27,13 @@ class NewStickerViewController: UIViewController, UIImagePickerControllerDelegat
     
     var confirmationView: UIView!
     
-    let photoLibraryButton = UIButton(frame: CGRectMake(-20,600,320,50))
-    let cameraButton = UIButton(frame: CGRectMake(170,600,320,50))
+    var photoLibraryButton: UIButton!
+    var cameraButton: UIButton!
     
     //ConfirmationView labels and buttons
     var pictureImageView = UIImageView(frame: CGRectMake(0, 0, 375, 590))
-    let confirmButton = UIButton(frame: CGRectMake(170,600,320,50))
-    let cancelButton = UIButton(frame: CGRectMake(-20,600,320,50))
+    var confirmButton: UIButton!
+    var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +41,18 @@ class NewStickerViewController: UIViewController, UIImagePickerControllerDelegat
         //AVFoundation
         setupSession()
 
-        self.view.backgroundColor = UIColor.cyanColor()
+        self.view.backgroundColor = UIColor.blackColor()
         
+        photoLibraryButton = UIButton(frame: CGRect(x: -110, y: view.frame.height-45, width: 320, height: 50))
         photoLibraryButton.setTitle(NSLocalizedString("PHOTO_LIBRARY_BUTTON", comment: ""), forState: UIControlState.Normal)
-        photoLibraryButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        photoLibraryButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         photoLibraryButton.titleLabel?.textAlignment = NSTextAlignment.Left
         photoLibraryButton.addTarget(self, action: #selector(NewStickerViewController.photoLIbraryButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(photoLibraryButton)
         
+        cameraButton = UIButton(frame: CGRect(x: 110, y: view.frame.height-45, width: 320, height: 50))
         cameraButton.setTitle(NSLocalizedString("CAMERA_BUTTON", comment: ""), forState: UIControlState.Normal)
-        cameraButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        cameraButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         cameraButton.titleLabel?.textAlignment = NSTextAlignment.Left
         cameraButton.addTarget(self, action: #selector(NewStickerViewController.cameraButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(cameraButton)
@@ -61,20 +63,21 @@ class NewStickerViewController: UIViewController, UIImagePickerControllerDelegat
         
         confirmationView.addSubview(pictureImageView)
         
+        confirmButton = UIButton(frame: CGRect(x: 110, y: view.frame.height-45, width: 320, height: 50))
         confirmButton.setTitle(NSLocalizedString("CONFIRM_BUTTON", comment: ""), forState: UIControlState.Normal)
-        confirmButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        confirmButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         confirmButton.titleLabel?.textAlignment = NSTextAlignment.Left
         confirmButton.addTarget(self, action: #selector(NewStickerViewController.confirmButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         confirmationView.addSubview(confirmButton)
         
+        cancelButton = UIButton(frame: CGRectMake(-110,view.frame.height-45,320,50))
         cancelButton.setTitle(NSLocalizedString("CANCEL_BUTTON", comment: ""), forState: UIControlState.Normal)
-        cancelButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        cancelButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         cancelButton.titleLabel?.textAlignment = NSTextAlignment.Left
         cancelButton.addTarget(self, action: #selector(NewStickerViewController.cancelButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         confirmationView.addSubview(cancelButton)
-        
+    
         pictureImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -191,7 +194,7 @@ class NewStickerViewController: UIViewController, UIImagePickerControllerDelegat
         do {
             
             if let fetchResults = try appDel.managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject] {
-                if fetchResults.count != 0{
+                if fetchResults.count != 0 {
                     
                     let managedObject = fetchResults[0]
                     managedObject.setValue(image, forKey: "photo")
@@ -203,24 +206,18 @@ class NewStickerViewController: UIViewController, UIImagePickerControllerDelegat
                     catch let error as NSError  {
                         
                         print("Could not save \(error), \(error.userInfo)")
-                        
                     }
-    
                 }
             }
-            
         }
             
         catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
     }
     
     func cancelButtonAction () {
         
         self.confirmationView.removeFromSuperview()
-        
     }
-
 }

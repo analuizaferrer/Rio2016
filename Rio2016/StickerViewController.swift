@@ -21,52 +21,16 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     //CoreData
     var stickerManagedObject: NSManagedObject!
     
-    //Labels and buttons
-   // let stickerImageView = UIImageView(frame: CGRectMake(0,100,400,350))
- //   let nameLabel = UILabel(frame: CGRectMake(0,90,UIScreen.mainScreen().bounds.size.width,50))
- //   var getStickerButton = UIButton(frame: CGRectMake(500,100,240,50))
-//    let locationStatusLabel = UILabel(frame: CGRectMake(20,600,320,50))
- //   var descriptionText = UITextView(frame: CGRectMake(20,120,275,350))
-    
+    // Labels and buttons
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var stickerImageView: UIImageView!
-
     @IBOutlet weak var locationStatusLabel: UILabel!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var getStickerButton: UIButton!
-    
     @IBOutlet weak var descriptionText: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if stickerManagedObject.valueForKey("photo") as? String != nil {
-            
-            stickerImageView.image = base64Decode((stickerManagedObject.valueForKey("photo") as? String)!)
-            
-        }
-        
-        else {
-            
-            stickerImageView.image = UIImage(named: (stickerManagedObject.valueForKey("cover") as? String)!)
-            
-            updateLocation()
-            
-            locationStatusLabel.lineBreakMode = .ByWordWrapping
-            locationStatusLabel.numberOfLines = 0
-            self.view.addSubview(locationStatusLabel)
-            
-            getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState: UIControlState.Normal)
-            getStickerButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            getStickerButton.addTarget(self, action: #selector(StickerViewController.getStickerButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
-            
-        }
-        
-        self.view.addSubview(stickerImageView)
         
         nameLabel.text = stickerManagedObject.valueForKey("name") as? String
         nameLabel.textAlignment = NSTextAlignment.Center
@@ -74,9 +38,8 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         nameLabel.textColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
         self.view.addSubview(nameLabel)
         
-//        getStickerButton.backgroundColor = UIColor(red: 255/255, green: 162/255, blue: 73/255, alpha: 1)
-//        getStickerButton.layer.cornerRadius = 10
-//        getStickerButton.titleLabel?.font = UIFont(name: "Avenir-Black", size: 16)
+        getStickerButton.hidden = true
+        locationStatusLabel.hidden = true
         
         descriptionText.font = UIFont(name: "Avenir-Roman", size: 16)
         descriptionText.text = stickerManagedObject.valueForKey("stickerDescription") as? String
@@ -85,6 +48,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         descriptionText.editable = false
     
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -155,24 +119,42 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
         if location.distanceFromLocation(stickerLocation) < 500 {
             
+           // locationStatusLabel.text = NSLocalizedString("HERE_LABEL", comment: "")
+            locationStatusLabel.hidden = true
+            getStickerButton.hidden = false
             
-            locationStatusLabel.text = NSLocalizedString("HERE_LABEL", comment: "")
-            self.view.addSubview(getStickerButton)
+        } else {
 
-        }
-        
-        else {
-            
-
-            
+            getStickerButton.hidden = true
             locationStatusLabel.text = NSLocalizedString("VISIT", comment: "") + " " + String(stickerManagedObject.valueForKey("name")!) + " " + NSLocalizedString("TO_GET_STICKER", comment: "")
+            locationStatusLabel.hidden = false
             
         }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if stickerManagedObject.valueForKey("photo") as? String != nil {
+            
+            stickerImageView.image = base64Decode((stickerManagedObject.valueForKey("photo") as? String)!)
+            
+        } else {
+            
+            stickerImageView.image = UIImage(named: (stickerManagedObject.valueForKey("cover") as? String)!)
+            
+            updateLocation()
+            
+            locationStatusLabel.lineBreakMode = .ByWordWrapping
+            locationStatusLabel.numberOfLines = 0
+            self.view.addSubview(locationStatusLabel)
+            
+            getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState: UIControlState.Normal)
+            getStickerButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            getStickerButton.addTarget(self, action: #selector(StickerViewController.getStickerButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
+        }
+        
+        self.view.addSubview(stickerImageView)
     }
     
     func presentActivityVCForImage(image: UIImage) {
