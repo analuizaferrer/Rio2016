@@ -62,7 +62,6 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("stickerCell", forIndexPath: indexPath)
         
-        
         let stickerView = UIView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
         stickerView.layer.cornerRadius = stickerView.frame.size.height/2
         stickerView.clipsToBounds = true
@@ -83,7 +82,7 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         cell.backgroundView = stickerView
 
-        let numberLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
+        let numberLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
         numberLabel.font = UIFont(name: "Avenir-Heavy", size: 50)
         numberLabel.textColor = UIColor.whiteColor()
         numberLabel.textAlignment = .Center
@@ -126,6 +125,11 @@ class AlbumCollectionViewController: UICollectionViewController {
         return 20.0
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
+    {
+        return UIEdgeInsets(top: view.frame.width * 0.05, left: view.frame.width * 0.05, bottom: view.frame.width * 0.05, right: view.frame.width * 0.05)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "place" {
@@ -133,9 +137,7 @@ class AlbumCollectionViewController: UICollectionViewController {
             let nextVC =  segue.destinationViewController as! StickerViewController
             
             nextVC.stickerManagedObject = stickersList[cellIndex]
-
         }
-        
     }
     
     func base64Decode (strBase64: String) -> UIImage {

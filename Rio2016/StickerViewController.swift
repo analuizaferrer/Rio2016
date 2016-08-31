@@ -142,17 +142,17 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             
             stickerImageView.image = UIImage(named: (stickerManagedObject.valueForKey("cover") as? String)!)
-            
-            updateLocation()
-            
-            locationStatusLabel.lineBreakMode = .ByWordWrapping
-            locationStatusLabel.numberOfLines = 0
-            self.view.addSubview(locationStatusLabel)
-            
-            getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState: UIControlState.Normal)
-            getStickerButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            getStickerButton.addTarget(self, action: #selector(StickerViewController.getStickerButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         }
+        
+        updateLocation()
+        
+        locationStatusLabel.lineBreakMode = .ByWordWrapping
+        locationStatusLabel.numberOfLines = 0
+        self.view.addSubview(locationStatusLabel)
+            
+        getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState:UIControlState.Normal)
+        getStickerButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        getStickerButton.addTarget(self, action: #selector(StickerViewController.getStickerButtonAction), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view.addSubview(stickerImageView)
     }
