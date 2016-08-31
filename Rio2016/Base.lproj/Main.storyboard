@@ -94,8 +94,8 @@
                                         <rect key="frame" x="27" y="227" width="240" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="CBv-LJ-UdJ"/>
-                                            <constraint firstAttribute="width" constant="280" id="kNd-Cz-1yO"/>
+                                            <constraint firstAttribute="height" constant="380" id="CBv-LJ-UdJ"/>
+                                            <constraint firstAttribute="width" constant="300" id="kNd-Cz-1yO"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
@@ -142,9 +142,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="JHW-Ts-Oon" firstAttribute="leading" secondItem="BiF-Lr-VEA" secondAttribute="leading" id="0RV-vb-c1g"/>
-                                    <constraint firstAttribute="trailing" secondItem="IkS-RS-MBM" secondAttribute="trailing" constant="60" id="19d-HH-HuF"/>
+                                    <constraint firstAttribute="trailing" secondItem="IkS-RS-MBM" secondAttribute="trailing" constant="20" id="19d-HH-HuF"/>
                                     <constraint firstItem="wNM-ws-Gb9" firstAttribute="top" secondItem="BiF-Lr-VEA" secondAttribute="top" constant="100" id="7Gi-de-xWc"/>
-                                    <constraint firstItem="IkS-RS-MBM" firstAttribute="leading" secondItem="BiF-Lr-VEA" secondAttribute="leading" constant="60" id="BBQ-69-Ik0"/>
+                                    <constraint firstItem="IkS-RS-MBM" firstAttribute="leading" secondItem="BiF-Lr-VEA" secondAttribute="leading" constant="20" id="BBQ-69-Ik0"/>
                                     <constraint firstItem="TXi-yB-7bn" firstAttribute="top" secondItem="IkS-RS-MBM" secondAttribute="bottom" constant="30" id="F2g-Lw-FLN"/>
                                     <constraint firstItem="wNM-ws-Gb9" firstAttribute="centerX" secondItem="BiF-Lr-VEA" secondAttribute="centerX" id="KIS-PY-Bg9"/>
                                     <constraint firstItem="IkS-RS-MBM" firstAttribute="top" secondItem="JHW-Ts-Oon" secondAttribute="bottom" constant="50" id="Kz1-Fp-3Za"/>
