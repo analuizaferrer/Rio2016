@@ -51,6 +51,10 @@ ARPOADOR_DESCRIPTION = "Uma das praias preferidas de cariocas e turistas pela be
 MUSEUM_OF_TOMORROW = "Museu do Amanhã";
 MUSEUM_OF_TOMORROW_DESCRIPTION = "Perguntas como “de onde viemos?” e “para onde vamos?” permeiam o imaginário da população mundial e são comuns a todos os povos. Pensando nessas questões, e em tantas outras, o visionário projeto do Museu do Amanhã tomou forma e se torna, então, um amplo espaço de debate e estudo sobre o impacto de nossas ações e como podemos alterar o cenário decadente que se avizinha.";
 
+LEBLON_BEACH = "Praia do Leblon";
+LEBLON_BEACH_DESCRIPTION = "Situada a oeste da Praia de Ipanema, a orla da Praia do Leblon é cheia de hotéis de classe alta assim como restaurantes gourmet, bares sofisticados e boutiques exclusivas. Essa praia é localizada em um bairro nobre de classe alta e é mais sofisticada que sua vizinha Ipanema.";
+
+
 PHOTO_LIBRARY_BUTTON = "Galeria";
 GET_STICKER_BUTTON = "Pegue a figurinha!";
 CAMERA_BUTTON = "Tirar foto";

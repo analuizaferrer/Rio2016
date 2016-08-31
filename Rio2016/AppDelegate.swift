@@ -75,7 +75,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let museumOfTomorrow = Sticker(name: NSLocalizedString("MUSEUM_OF_TOMORROW", comment: "Museum of Tomorrow"), description: NSLocalizedString("MUSEUM_OF_TOMORROW_DESCRIPTION1", comment: "Questions like “where did we come from?” and “where are we going?” pervade the thoughts of the world’s population and are common among all peoples. Reflecting on these questions, as well as others, the visionary project of the Museu do Amanhã(Museum of Tomorrow) took shape and became an ample space for debating and studying the impact of our actions and how we can alter the decaying scenario that draws close."), latitude: 0, longitude: 0, cover: "museumOfTomorrow", photo: "no photo", date: "")
         
-        return [christTheRedeemer, sugarLoaf, copacabanaBeach, lapaArches, saintTeresaTram, ruinsPark, selaronsSteps, municipalTheatre, imperialPalace, quintaDaBoaVista, lagoaRodrigoDeFreitas, botanicalGarden, tijucaForest, arpoador, museumOfTomorrow, pucRio]
+        let leblonBeach = Sticker(name: NSLocalizedString("LEBLON_BEACH", comment: "Leblon Beach"), description: NSLocalizedString("LEBLON_BEACH_DESCRIPTION", comment: "Situada a oeste da Praia de Ipanema, a orla da Praia do Leblon é cheia de hotéis de classe alta assim como restaurantes gourmet, bares sofisticados e boutiques exclusivas. Essa praia é localizada em um bairro nobre de classe alta e é mais sofisticada que sua vizinha Ipanema."), latitude: -22.5900, longitude: -43.1333, cover: "leblonBeach", photo: "no photo", date: "")
+        
+        return [christTheRedeemer, sugarLoaf, copacabanaBeach, lapaArches, saintTeresaTram, ruinsPark, selaronsSteps, municipalTheatre, imperialPalace, quintaDaBoaVista, lagoaRodrigoDeFreitas, botanicalGarden, tijucaForest, arpoador, museumOfTomorrow, leblonBeach, pucRio]
     
     }
 

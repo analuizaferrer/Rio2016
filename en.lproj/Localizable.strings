@@ -51,6 +51,9 @@ ARPOADOR_DESCRIPTION = "One of the favorite beaches for residents and tourists f
 MUSEUM_OF_TOMORROW = "Museum of Tomorrow";
 MUSEUM_OF_TOMORROW_DESCRIPTION = "Questions like “where did we come from?” and “where are we going?” pervade the thoughts of the world’s population and are common among all peoples. Reflecting on these questions, as well as others, the visionary project of the Museu do Amanhã(Museum of Tomorrow) took shape and became an ample space for debating and studying the impact of our actions and how we can alter the decaying scenario that draws close.";
 
+LEBLON_BEACH = "Leblon Beach";
+LEBLON_BEACH_DESCRIPTION = "Sitting just west of Ipanema Beach, Leblon beach is fronted by high-class hotels as well as gourmet restaurants, sophisticated bars, shopping malls and exclusive boutiques. This beach sits in a wealthy district of upper class high rises and is more subdued and sophisticated than its neighbor, Ipanema.";
+
 PHOTO_LIBRARY_BUTTON = "Photo Library";
 GET_STICKER_BUTTON = "Get sticker!";
 CAMERA_BUTTON = "Take photo";
