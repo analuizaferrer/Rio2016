@@ -13,6 +13,8 @@ private let reuseIdentifier = "stickerCell"
 
 class AlbumCollectionViewController: UICollectionViewController {
 
+  var numberLabel: UILabel!
+    
     var stickersList = [NSManagedObject]()
     
     var cellIndex = 0
@@ -70,6 +72,10 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         
         let stickerImageView = UIImageView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
+        let stickerView = UIView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
+        
+        stickerView.backgroundColor = UIColor.lightGrayColor()
+
         
         
         if stickersList[indexPath.row].valueForKey("photo") as? String != nil {
@@ -84,14 +90,18 @@ class AlbumCollectionViewController: UICollectionViewController {
             stickerImageView.image = coverImage
             
         }
-        cell.backgroundView = stickerImageView
+        cell.backgroundView = stickerView
 
         
-        let numberLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
-        numberLabel.font = UIFont(name: "Avenir-Heavy", size: 14)
-        numberLabel.textAlignment = .Center
-        numberLabel.clearsContextBeforeDrawing = true
-        numberLabel.text = "\(indexPath.row + 1)"
+        
+        
+        self.numberLabel = UILabel(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height/2))
+        self.numberLabel.font = UIFont(name: "Avenir-Heavy", size: 50)
+        self.numberLabel.textColor = UIColor.whiteColor()
+        self.numberLabel.textAlignment = .Center
+        self.numberLabel.clearsContextBeforeDrawing = true
+        self.numberLabel.text = "\(indexPath.row + 1)"
+
         cell.contentView.addSubview(numberLabel)
         
         return cell
