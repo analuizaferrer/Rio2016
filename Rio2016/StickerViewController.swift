@@ -50,6 +50,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         descriptionText.backgroundColor = UIColor.clearColor()
         descriptionText.editable = false
     
+        locationStatusLabel.font = UIFont(name: "Avenir-Black", size: 12)
     }
     
 
@@ -122,7 +123,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         
         if location.distanceFromLocation(stickerLocation) < 500 {
             
-           // locationStatusLabel.text = NSLocalizedString("HERE_LABEL", comment: "")
+//            locationStatusLabel.text = NSLocalizedString("HERE_LABEL", comment: "")
             locationStatusLabel.hidden = true
             getStickerButton.hidden = false
             
@@ -150,7 +151,7 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
         updateLocation()
         
         locationStatusLabel.lineBreakMode = .ByWordWrapping
-        locationStatusLabel.numberOfLines = 0
+        locationStatusLabel.numberOfLines = 2
         self.view.addSubview(locationStatusLabel)
             
         getStickerButton.setTitle(NSLocalizedString("GET_STICKER_BUTTON", comment: ""), forState:UIControlState.Normal)
