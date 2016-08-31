@@ -22,7 +22,8 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     var stickerManagedObject: NSManagedObject!
     
     // Labels and buttons
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
+   
     @IBOutlet weak var stickerImageView: UIImageView!
     @IBOutlet weak var locationStatusLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -31,6 +32,8 @@ class StickerViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.scrollView.contentSize.height = 1000
         
         nameLabel.text = stickerManagedObject.valueForKey("name") as? String
         nameLabel.textAlignment = NSTextAlignment.Center
