@@ -64,6 +64,9 @@ class AlbumCollectionViewController: UICollectionViewController {
         
         
         let stickerView = UIView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
+        stickerView.layer.cornerRadius = stickerView.frame.size.height/2
+        stickerView.clipsToBounds = true
+        
         let stickerImageView = UIImageView(frame: CGRectMake(0,0,cell.frame.width,cell.frame.height))
         stickerView.addSubview(stickerImageView)
         
@@ -107,20 +110,20 @@ class AlbumCollectionViewController: UICollectionViewController {
                         layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let size = CGSize(width: (self.view.frame.width/3)-2, height: (self.view.frame.width/3)-2)
+        let size = CGSize(width: (self.view.frame.width/2)-30, height: (self.view.frame.width/2)-30)
         
         return size
         
     }
 
     func collectionView(collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 1.0
+        return 10.0
     }
     
     func collectionView(collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
         minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 1.0
+        return 20.0
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -137,9 +140,9 @@ class AlbumCollectionViewController: UICollectionViewController {
     
     func base64Decode (strBase64: String) -> UIImage {
         
-        let decodedData: NSData = NSData(base64EncodedString: strBase64, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
+        let encodedData: NSData = NSData(base64EncodedString: strBase64, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
         
-        let decodedImage: UIImage = UIImage(data: decodedData)!
+        let decodedImage: UIImage = UIImage(data: encodedData)!
         
         return decodedImage
     }
